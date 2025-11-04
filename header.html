@@ -1,23 +1,9 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surf Art Studio | Modern Surf School &amp; Shop</title>
-    <meta name="description" content="Experience the perfect blend of surf culture and modern art. Professional surf lessons, eco-friendly boards, and artistic surf lifestyle.">
-    <meta name="author" content="Surf Art Studio">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-
-    <meta property="og:title" content="1376c29e-3689-4abc-985b-27e14520cb2b">
-    <meta property="og:description" content="Lovable Generated Project">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c2027340-ce08-43ec-9d40-d1e1bf079252/id-preview-18a12289--1376c29e-3689-4abc-985b-27e14520cb2b.lovable.app-1762251681019.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@lovable_dev">
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c2027340-ce08-43ec-9d40-d1e1bf079252/id-preview-18a12289--1376c29e-3689-4abc-985b-27e14520cb2b.lovable.app-1762251681019.png">
-    <script type="module" crossorigin="" src="/assets/index-CjLpWPs2.js"></script>
-
+    <title>Advanced Scrolling Header</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Inter font -->
@@ -25,21 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" crossorigin="" href="css/style.css">
-    <link rel="stylesheet" crossorigin="" href="css/style2.css">
-    <link rel="stylesheet" crossorigin="" href="css/style3.css">
-  
+    <link rel="stylesheet" href="assets/style.css">
 </head>
+<body class="bg-[#f0f5d5]"> <!-- UPDATED: Background Color -->
 
-<body>
-    <div id="root">
-        <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
-            <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
-        </div>
-        <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section>
-        <div class="min-h-screen">
-            <!--
+    <!--
       ============================================================
       HEADER - TOP (TRANSPARENT)
       ============================================================
@@ -321,8 +297,11 @@
         </div>
     </header>
 
-    <!-- MOBILE MENU (FULL SCREEN) -->
-     
+    <!--
+      ============================================================
+      MOBILE MENU (FULL SCREEN)
+      ============================================================
+    -->
     <div id="mobile-menu"
          class="fixed top-0 left-0 w-full h-screen bg-gray-900/95 backdrop-blur-lg
                 flex flex-col items-center justify-start gap-8 pt-24 px-6
@@ -374,163 +353,50 @@
 
     <!--
       ============================================================
-      END HEADER MENU
+      DUMMY CONTENT TO ENABLE SCROLLING
       ============================================================
     -->
-
-
-            <section class="relative pt-32 pb-20 bg-gradient-to-b from-primary/10 to-background">
-                <div class="container mx-auto px-4">
-                    <div class="text-center max-w-3xl mx-auto">
-                        <h1 class="text-5xl md:text-6xl font-bold mb-6">About Us</h1>
-                        <p class="text-xl text-muted-foreground">Where passion meets the ocean, and art meets adventure</p>
-                    </div>
+    <main>
+        <!-- Hero Section (Dark) -->
+        <section id="home" class="h-screen bg-gray-800 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/2D3748/E2E8F0?text=Your+Awesome+Hero+Image')">
+            <div class="flex items-center justify-center h-full bg-black/40 pt-24"> <!-- Added pt-24 to offset for header -->
+                <div class="text-center">
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Welcome to MyLogo</h1>
+                    <p class="text-xl text-gray-200 mb-8">Scroll down to see the header effect.</p>
+                    <a href="#quote" class="bg-[#bf5300] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#a64900] transition-colors"> <!-- UPDATED: Color -->
+                        Learn More
+                    </a>
                 </div>
-            </section>
-            <section class="py-20 bg-background">
-                <div class="container mx-auto px-4">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 class="text-4xl font-bold mb-6">Our Story</h2>
-                            <p class="text-lg text-muted-foreground mb-4">Surf Art Studio was born from a simple dream: to create a space where the raw power of the ocean meets creative expression. Founded in 2015 by a group of professional surfers and artists, we've grown into a thriving community
-                                of ocean lovers.</p>
-                            <p class="text-lg text-muted-foreground mb-4">What started as a small surf school on the beaches of Taghazout has evolved into a comprehensive surf lifestyle destination. We offer everything from beginner lessons to advanced coaching, eco-friendly surf equipment, and artistic
-                                surf culture experiences.</p>
-                            <p class="text-lg text-muted-foreground">Today, we're proud to have taught thousands of students from around the world, each leaving with not just improved surf skills, but a deeper connection to the ocean and our global surf community.</p>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-primary/20 rounded-3xl transform rotate-3"></div><img src="/assets/about-surf-dGRnJgNW.jpg" alt="About Surf Art Studio" class="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover"></div>
-                    </div>
-                </div>
-            </section>
-            <section class="py-20 bg-secondary">
-                <div class="container mx-auto px-4">
-                    <div class="text-center mb-16">
-                        <h2 class="text-4xl font-bold mb-4">Our Values</h2>
-                        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">These principles guide everything we do</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="bg-card p-8 rounded-2xl shadow-lg hover-lift">
-                            <div class="text-primary mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart w-8 h-8">
-                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Passion for the Ocean</h3>
-                            <p class="text-muted-foreground">We live and breathe surfing, and our love for the ocean drives everything we do.</p>
-                        </div>
-                        <div class="bg-card p-8 rounded-2xl shadow-lg hover-lift">
-                            <div class="text-primary mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-8 h-8">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Community First</h3>
-                            <p class="text-muted-foreground">Building a welcoming, inclusive community where everyone feels at home.</p>
-                        </div>
-                        <div class="bg-card p-8 rounded-2xl shadow-lg hover-lift">
-                            <div class="text-primary mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award w-8 h-8">
-                                    <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-                                    <circle cx="12" cy="8" r="6"></circle>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Excellence in Teaching</h3>
-                            <p class="text-muted-foreground">Our certified instructors bring years of experience and proven teaching methods.</p>
-                        </div>
-                        <div class="bg-card p-8 rounded-2xl shadow-lg hover-lift">
-                            <div class="text-primary mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target w-8 h-8">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <circle cx="12" cy="12" r="6"></circle>
-                                    <circle cx="12" cy="12" r="2"></circle>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Sustainable Practices</h3>
-                            <p class="text-muted-foreground">Committed to protecting our oceans and promoting eco-friendly surfing.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer id="contact" class="bg-foreground text-background py-16">
-                <div class="container mx-auto px-4">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                        <div>
-                            <h3 class="text-2xl font-bold text-primary mb-4">Surf Art Studio</h3>
-                            <p class="text-gray-300 mb-6">Where the ocean meets creativity. Join us for an unforgettable surf experience.</p>
-                            <div class="flex gap-4">
-                                <a href="#" class="hover:text-primary transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook w-6 h-6">
-                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                    </svg>
-                                </a>
-                                <a href="#" class="hover:text-primary transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-6 h-6">
-                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                                    </svg>
-                                </a>
-                                <a href="#" class="hover:text-primary transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter w-6 h-6">
-                                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                            <ul class="space-y-2">
-                                <li><a href="/about" class="text-gray-300 hover:text-primary transition-colors">About Us</a></li>
-                                <li><a href="/services" class="text-gray-300 hover:text-primary transition-colors">Our Services</a></li>
-                                <li><a href="/shop" class="text-gray-300 hover:text-primary transition-colors">Shop</a></li>
-                                <li><a href="/gallery" class="text-gray-300 hover:text-primary transition-colors">Gallery</a></li>
-                                <li><a href="/contact" class="text-gray-300 hover:text-primary transition-colors">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold mb-4">Services</h4>
-                            <ul class="space-y-2 text-gray-300">
-                                <li>Beginner Lessons</li>
-                                <li>Advanced Coaching</li>
-                                <li>Surf Equipment Rental</li>
-                                <li>Group Sessions</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold mb-4">Contact</h4>
-                            <ul class="space-y-3">
-                                <li class="flex items-center gap-2 text-gray-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5 text-primary">
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                    </svg><span>+1 (555) 123-4567</span></li>
-                                <li class="flex items-center gap-2 text-gray-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-5 h-5 text-primary">
-                                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                                    </svg><span>hello@surfartstudio.com</span></li>
-                                <li class="flex items-center gap-2 text-gray-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-5 h-5 text-primary">
-                                        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                                        <circle cx="12" cy="10" r="3"></circle>
-                                    </svg><span>123 Beach Road, Surf City</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
-                        <p>© 2024 Surf Art Studio. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
+            </div>
+        </section>
 
+        <!-- Other Sections (Light) -->
+        <section id="about" class="h-screen py-20 bg-white"> <!-- UPDATED: bg-white for contrast -->
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">About Us</h2>
+                <p class="text-lg text-gray-600 leading-relaxed text-center">
+                    This is a content section to fill the page. As you scroll past the hero section,
+                    the header above will transform. The transparent one fades out, and the
+                    glassy orange one slides in from the top.
+                    <br><br>
+                    The desktop dropdown is now a centered mega menu with a 3-column list.
+                </p>
+            </div>
+        </section>
 
-
-<script src="js/animation.js"></script>
-<script src="js/header.js"></script>
+        <section id="services" class="h-screen py-20 bg-white"> <!-- UPDATED: bg-white for contrast -->
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Services</h2>
+                <p class="text-lg text-gray-600 leading-relaxed text-center">
+                    This is another section. The header remains sticky at the top
+                    as you continue to scroll through the page content.
+                </p>
+            </div>
+        </section>
+    </main>
 </body>
+<script src="js/header.js"></script>
 </html>
+
+
+

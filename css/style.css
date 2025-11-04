@@ -3321,3 +3321,40 @@ h6 {
     left: -15px;
     transform-origin: center center; /* Helps with rotation */
 }
+
+
+/* header menu */
+
+#header-top, #header-sticky {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Custom transition for dropdowns */
+        .dropdown-panel {
+            transition: all 0.3s ease-out;
+        }
+
+        /* --- NEW: "Pro" Link Hover Animation --- */
+        .nav-link-animate {
+            position: relative;
+            text-decoration: none;
+            display: inline-block; /* Or 'block' if it's a full-width link */
+            padding-bottom: 4px; /* Space for the underline */
+        }
+        .nav-link-animate::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0; /* Starts with 0 width */
+            height: 2px;
+            background-color: #bf5300; /* Brand color underline */
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link-animate:hover::after {
+            width: 100%; /* Expands to full width on hover */
+        }
+        .surf-shape {
+            background-image: url(../images/header-shape.png);
+}
+
