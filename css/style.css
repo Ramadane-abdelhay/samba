@@ -3358,3 +3358,603 @@ h6 {
             background-image: url(../images/header-shape.png);
 }
 
+
+/*SLIDER*/
+
+
+/* --- Base Reset --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* --- NEW: CSS for Card 3 --- */
+    /* Define theme variables used for custom animations */
+    :root {
+        --thm-primary: #ffc400; /* Yellow for highlights */
+        --thm-base: #063a7a; /* Dark Blue for main accents */
+        --thm-black: #1f2937; /* Near black */
+        --thm-font: 'Inter', sans-serif;
+    }
+
+    /* 1. Main Card Movement and Sweep Trigger */
+    .course-one__single {
+        transition: all 500ms ease;
+        transform: translateY(0);
+    }
+    .course-one__single:hover {
+        transform: translateY(-76px); /* Move the card up */
+    }
+    /* Sweep effect trigger (hvr-sweep-to-bottom defined below) */
+    .course-one__single:hover .hvr-sweep-to-bottom::before {
+        transform: scaleY(1);
+    }
+
+    /* 2. Category Tag (Complex Shape and Position) */
+    .course-one__cat {
+        transition: all 500ms ease;
+        position: absolute;
+        top: 10px;
+        left: -10px;
+        z-index: 11;
+    }
+    .course-one__cat:hover {
+        background-color: var(--thm-base);
+        color: #fff;
+    }
+    .course-one__cat::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--thm-primary);
+        clip-path: polygon(0 0, 100% 100%, 100% 0);
+        transition: all 500ms ease;
+    }
+    .course-one__cat:hover::before {
+        background-color: var(--thm-base);
+    }
+    
+    /* 3. Image Container Movement */
+    .course-one__image {
+        transition: all 500ms ease;
+        transform: translateY(0);
+    }
+    .course-one__single:hover .course-one__image {
+        transform: translateY(76px); /* Move the image down */
+    }
+
+    /* 4. Image/Play Button Animations */
+    .course-one__image-inner>img {
+        transition: all 500ms ease;
+        transform: scale(1.0);
+        opacity: 1;
+    }
+    .course-one__single:hover .course-one__image-inner>img {
+        opacity: 0.2;
+        transform: scale(1.05);
+    }
+    .course-one__image-inner>a { /* Play Button */
+        transform-style: preserve-3d;
+        transform: perspective(500px) rotate(45deg);
+        transform-origin: center center;
+        transition: opacity 500ms ease 0ms, transform 500ms ease 0ms;
+    }
+    .course-one__single:hover .course-one__image-inner>a {
+        opacity: 1;
+        transform: perspective(500px) rotate(0deg);
+        transition: opacity 500ms ease 500ms, transform 500ms ease 500ms;
+    }
+    .course-one__image-inner>a::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        background-color: #fff;
+        opacity: 0.1;
+        transition: all 500ms ease;
+    }
+    .course-one__image-inner>a:hover::after {
+        left: 0;
+        top: 0;
+    }
+
+    /* 5. Sweep-to-Bottom Hover Effect (Requires Pseudo-element) */
+    .hvr-sweep-to-bottom {
+        position: relative;
+        overflow: hidden;
+        transition: all 500ms ease;
+    }
+    .hvr-sweep-to-bottom::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--thm-base); /* Sweep color (Dark Blue) */
+        transform: scaleY(0);
+        transform-origin: 50% 0;
+        transition-property: transform;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+    }
+
+    /* 6. Content Block Adjustments on Hover */
+    .course-one__single:hover .course-one__content {
+        position: relative;
+        z-index: 20; 
+        border-radius: 0 0 0 0; /* Remove bottom corners on hover */
+    }
+    .course-one__single:hover .course-one__content h3 a,
+    .course-one__single:hover .course-one__content p {
+        color: #fff /* Text color change on hover */
+    }
+
+    /* 7. Book Link 3D Flip */
+    .course-one__book-link {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 20;
+        transform-origin: top center;
+        transform-style: preserve-3d;
+        transform: perspective(400px) rotateX(-90deg);
+        transition: all 500ms ease;
+    }
+    .course-one__single:hover .course-one__book-link {
+        transform: perspective(400px) rotateX(0);
+        border-radius: 0 0 30px 30px; /* Reapply border radius to link container */
+    }
+    .course-one__book-link:hover {
+        background-color: var(--thm-base);
+        color: #fff;
+    }
+
+    /* 8. Faint Background Elements (Number and Icon) */
+    .course-number, .course-icon {
+        position: absolute;
+        z-index: 1;
+        transition: all 500ms ease;
+        pointer-events: none;
+        color: #051b35;
+        opacity: 0.06;
+    }
+    .course-number {
+        font-size: 200px;
+        line-height: 1em;
+        bottom: -20px;
+        left: -10px;
+        font-family: 'Barlow Condensed', sans-serif;
+    }
+    .course-icon {
+        width: 75%;
+        height: auto;
+        top: 50%;
+        left: 86%;
+        transform: translate(-50%, -50%) rotate(15deg);
+    }
+    .course-one__single:hover .course-number, 
+    .course-one__single:hover .course-icon {
+        opacity: 0.1; 
+        color: #fff;
+    }
+    /* --- END CSS for Card 3 --- */
+
+
+    html, body {
+      min-height: 100vh; /* Changed */
+      width: 100%;
+      background-color: #f0f0f0; /* Added a light page background */
+      scroll-behavior: smooth;
+    }
+  
+    /* --- General Section --- */
+    
+    .sticky-scroll-container {
+      position: relative;
+      height: 400vh; 
+    }
+
+    .slider-section {
+      position: sticky; 
+      top: 0;
+      overflow: hidden;
+      font-family: 'Roboto', serif;
+      background: linear-gradient(135deg, rgb(227, 226, 163), #7c7419);
+      height: 100vh; /* Ensure section takes full height */
+      width: 100%; /* Ensure section takes full width */
+    }
+
+    .placeholder-section {
+      height: 50vh; /* 50% of the viewport height */
+      padding: 40px;
+      font-family: 'Roboto', sans-serif;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .placeholder-section h2 {
+      font-size: 2rem;
+      color: #333;
+    }
+    .placeholder-section p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+
+    .carousel {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    /* --- Carousel Item Base --- */
+    .carousel-item {
+      --items: 6; /* Make sure this matches your total item count */
+      
+      /* MODIFIED: Adjusted width and height for new card design */
+      --width: clamp(320px, 40vw, 384px);
+      --height: clamp(450px, 60vh, 500px);
+      
+      --x: calc(var(--active) * 800%);
+      --y: calc(var(--active) * 200%);
+      --rot: calc(var(--active) * 120deg);
+      --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+      
+      /* MODIFIED: Set overflow to visible to allow new card's animations */
+      overflow: visible;
+      position: absolute;
+      z-index: var(--zIndex);
+      width: var(--width);
+      margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+      user-select: none;
+      transform-origin: 0% 100%;
+      /* REMOVED box-shadow, as new card has its own shadow via Tailwind */
+      background: transparent; /* Changed from black */
+      pointer-events: all;
+      transform: translate(var(--x), var(--y)) rotate(var(--rot));
+      
+      /* MODIFIED: Added opacity to the transition */
+      transition: transform .6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity .6s ease;
+    }
+
+    .carousel-item .carousel-box {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity .6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      opacity: var(--opacity);
+    }
+
+    .carousel-item .carousel-box:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, .8) 100%);
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    /* --- Styles for Old Card Content --- */
+    /* (Still needed for other cards) */
+    .carousel-item .carousel-content {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      padding: 20px;
+      color: #fff;
+      width: 100%;
+    }
+
+    .carousel-item .title {
+      font-size: clamp(18px, 3vw, 26px);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .carousel-item .desc {
+      font-size: clamp(12px, 2vw, 14px);
+      line-height: 1.4;
+      opacity: 0.85;
+      margin-bottom: 15px;
+    }
+
+    .carousel-item .btn {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 6px 14px;
+      border-radius: 5px;
+      transition: background .3s ease, transform .3s ease;
+      cursor: pointer;
+    }
+
+    .carousel-item .btn:hover {
+      background: #eee;
+      transform: scale(1.05);
+    }
+
+    /* --- Layout, Logo, Social --- */
+    .layout {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .layout:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 90px;
+      width: 10px;
+      height: 100%;
+      border: 1px solid #fff;
+      border-top: none;
+      border-bottom: none;
+      opacity: .15;
+    }
+
+    .layout .box {
+      position: absolute;
+      bottom: 0;
+      left: 30px;
+      color: #fff;
+      transform-origin: 0% 10%;
+      transform: rotate(-90deg);
+      font-size: 9px;
+      line-height: 1.4;
+      text-transform: uppercase;
+      opacity: .4;
+    }
+
+    .logo {
+      position: absolute;
+      z-index: 2;
+      top: 28px;
+      right: 28px;
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: .5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: all;
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+      overflow: hidden;
+      padding-bottom: .1em;
+      font-weight: bold;
+    }
+
+    .social {
+      position: absolute;
+      z-index: 10;
+      bottom: 20px;
+      right: 25px;
+      color: #fff;
+      opacity: .4;
+    }
+
+    .social a {
+      display: inline-block;
+      margin-left: 3px;
+    }
+
+    .social svg {
+      --fill: #fff;
+      width: 35px;
+      height: 35px;
+    }
+    
+    /* --- Carousel Navigation Buttons --- */
+    .carousel-nav {
+      position: absolute;
+      bottom: 40px;
+      left: 15%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      gap: 15px;
+    }
+    
+    .carousel-nav button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-nav button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .carousel-nav button:active {
+      transform: scale(0.95);
+    }
+    
+    .carousel-nav button:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    
+    .carousel-nav button svg {
+      width: 24px;
+      height: 24px;
+      stroke: #fff;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* --- Cursors --- */
+    .cursor {
+      position: fixed;
+      z-index: 1000; /* Ensure cursor is on top */
+      top: 0;
+      left: 0;
+      --size: 40px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .2);
+      margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+      transition: transform .85s cubic-bezier(0, 0.02, 0, 1);
+      display: none;
+      pointer-events: none;
+    }
+
+    .cursor2 {
+      --size: 2px;
+      transition-duration: .7s;
+    }
+
+    @media (pointer: fine) {
+      .cursor {
+        display: block;
+      }
+    }
+
+    /*
+    ==================================================
+    MOBILE-FRIENDLY STYLES
+    ==================================================
+    */
+    @media (max-width: 768px) {
+      .cursor,
+      .cursor2 {
+        display: none !important;
+      }
+      
+      .carousel-item {
+        /* MODIFIED: Adjusted for new card, but still mobile-friendly */
+        --width: clamp(320px, 85vw, 384px);
+        --height: clamp(450px, 60vh, 500px);
+
+        /* --- Adjust animation for mobile --- */
+        --x: calc(var(--active) * 100%); 
+        --y: calc(var(--active) * 120%); 
+        --rot: calc(var(--active) * 20deg); 
+      }
+      
+      /* Adjust text sizes for old cards */
+      .carousel-item .title {
+        font-size: 22px;
+      }
+      .carousel-item .desc {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      .carousel-item .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      
+      /* Reposition layout elements */
+      .layout:before {
+        left: 20px;
+      }
+      .layout .box {
+        left: -20px;
+        bottom: 50px;
+      }
+      .social {
+        right: 15px;
+        bottom: 15px;
+      }
+      .logo {
+        top: 20px;
+        right: 20px;
+      }
+
+      /* --- Mobile Nav Buttons --- */
+      .carousel-nav {
+        bottom: 20px;
+      }
+      .carousel-nav button {
+        width: 50px;
+        height: 50px;
+      }
+      .carousel-nav button svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    /*surfer */
+    .animated-surfer {
+      position: absolute;
+      top: 80px;
+      right: 70px;
+      width: 250px; 
+      z-index: 1; /* Behind the carousel (z-index: 2) */
+      animation: surf-animation 4s ease-in-out infinite alternate;
+    }
+    
+    @media (max-width: 768px) {
+      .animated-surfer {
+        top: 60px;
+        right: 20px;
+        width: 120px;
+      }
+    }
+    @keyframes surf-animation {
+      0% {
+        transform: translateY(0) translateX(0) rotate(-3deg);
+      }
+      50% {
+        transform: translateY(-12px) translateX(-8px) rotate(3deg);
+      }
+      100% {
+        transform: translateY(0) translateX(0) rotate(-3deg);
+      }
+    }
+/**/
