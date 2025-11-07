@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surf Art Studio | Modern Surf School &amp; Shop</title>
@@ -34,11 +36,10 @@
     <!-- CSS -->
 
     <link rel="stylesheet" crossorigin="" href="css/style.css">
-    <link rel="stylesheet" crossorigin="" href="css/style2.css">
-    <link rel="stylesheet" crossorigin="" href="css/style3.css">
+
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- GSAP (GreenSock Animation Platform) Libraries -->
     <!-- Core GSAP library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -46,7 +47,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- MotionPathPlugin for animating along an SVG path -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-  
+
 
 
 
@@ -65,334 +66,386 @@
       ============================================================
       - Absolute, taller, fades out on scroll.
     -->
-    <header id="header-top" class="absolute top-0 left-0 right-0 z-40 text-white w-full">
-        <div class="flex justify-between items-center h-24 px-6 lg:px-10 max-w-7xl mx-auto">
+            <header id="header-top" class="absolute top-0 left-0 right-0 z-40 text-white w-full">
+                <div class="flex justify-between items-center h-24 px-6 lg:px-10 max-w-7xl mx-auto">
 
-            <!-- ======== LEFT: LOGO & PHONE ======== -->
-            <div class="flex items-center gap-6">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center">
-                    <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain">
-                </a>
-                
-                <!-- Phone Number (Highlighted) -->
-                <div class="hidden lg:block ml-4 border-l border-white/30 pl-6">
-                    <span class="text-xs opacity-80">Call Us 24/7</span>
-                    <p class="text-l font-semibold text-[#bf5300]/80"> <!-- UPDATED: Color -->
-                        +212 670 184 552
-                    </p>
-                </div>
-            </div>
+                    <!-- ======== LEFT: LOGO & PHONE ======== -->
+                    <div class="flex items-center gap-6">
+                        <!-- Logo -->
+                        <a href="index.html" class="flex items-center">
+                            <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain">
+                        </a>
 
-            <!-- ======== CENTER: NAVIGATION ======== -->
-            <nav class="hidden lg:flex items-center gap-8">
-                <!-- UPDATED: Added .nav-link-animate -->
-                <a href="index.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Home</a>
-                <a href="about.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">About Us</a>
+                        <!-- Phone Number (Highlighted) -->
+                        <div class="hidden lg:block ml-4 border-l border-white/30 pl-6">
+                            <span class="text-xs opacity-80">Call Us 24/7</span>
+                            <p class="text-l font-semibold text-[#bf5300]/80">
+                                <!-- UPDATED: Color -->
+                                +212 670 184 552
+                            </p>
+                        </div>
+                    </div>
 
-                <!-- == Services Dropdown (Full Width) == -->
-                <div class="group"> <!-- UPDATED: Removed 'relative' -->
-                    <button class="flex items-center gap-1 text-sm font-medium hover:text-[#bf5300]"> <!-- UPDATED: Color -->
-                        <a href="Services.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Services</a>
-                        <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <!-- UPDATED: Dropdown Panel - Full-width -->
-                    <div class="dropdown-panel absolute top-full left-0 right-0 
+                    <!-- ======== CENTER: NAVIGATION ======== -->
+                    <nav class="hidden lg:flex items-center gap-8">
+                        <!-- UPDATED: Added .nav-link-animate -->
+                        <a href="index.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Home</a>
+                        <a href="about.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">About Us</a>
+
+                        <!-- == Services Dropdown (Full Width) == -->
+                        <div class="group">
+                            <!-- UPDATED: Removed 'relative' -->
+                            <button class="flex items-center gap-1 text-sm font-medium hover:text-[#bf5300]">
+                                <!-- UPDATED: Color -->
+                                <a href="Services.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Services</a>
+                                <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- UPDATED: Dropdown Panel - Full-width -->
+                            <div class="dropdown-panel absolute top-full left-0 right-0 
                                 opacity-0 invisible group-hover:opacity-100 group-hover:visible
                                 transform translate-y-2 group-hover:translate-y-0
-                                "> <!-- UPDATED: Removed 'w-screen', added 'right-0' -->
-                        <div class="bg-white text-gray-800 shadow-2xl surf-shape">
-                            <!-- UPDATED: 3-Column Layout (Centered) -->
-                            <div class="flex p-8 max-w-7xl mx-auto">
-                                <!-- Part 1: 33% -->
-                                <div class="w-1/3 flex-shrink-0 pr-8">
-                                    <h3 class="text-lg font-semibold mb-2 text-[#bf5300]">Our Services</h3> <!-- UPDATED: Color -->
-                                    <p class="text-sm text-gray-600">Explore the solutions we offer to help you grow.</p>
-                                </div>
-        
-                                <!-- Part 2: 33% (The List) -->
-                                <div class="w-1/3 px-8 border-l border-r border-gray-200">
-                                    <nav class="flex flex-col gap-2">
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Web Development</a> <!-- UPDATED: Color & Class -->
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Mobile Apps</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Digital Marketing</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Cloud Solutions</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">AI Integration</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">System Architecture</a>
-                                    </nav>
-                                </div>
-        
-                                <!-- Part 3: 33% -->
-                                <div class="w-1/3 flex-shrink-0 pl-8 flex flex-col items-center justify-center">
-                                     <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain mb-6"> <!-- UPDATED: Color -->
-                                     <a href="Services.html" class="inline-block bg-[#bf5300] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a64900] transition-colors"> <!-- UPDATED: Color -->
-                                         Show All Services
-                                     </a>
+                                ">
+                                <!-- UPDATED: Removed 'w-screen', added 'right-0' -->
+                                <div class="bg-white text-gray-800 shadow-2xl surf-shape">
+                                    <!-- UPDATED: 3-Column Layout (Centered) -->
+                                    <div class="flex p-8 max-w-7xl mx-auto">
+                                        <!-- Part 1: 33% -->
+                                        <div class="w-1/3 flex-shrink-0 pr-8">
+                                            <h3 class="text-lg font-semibold mb-2 text-[#bf5300]">Our Services</h3>
+                                            <!-- UPDATED: Color -->
+                                            <p class="text-sm text-gray-600">Explore the solutions we offer to help you grow.</p>
+                                        </div>
+
+                                        <!-- Part 2: 33% (The List) -->
+                                        <div class="w-1/3 px-8 border-l border-r border-gray-200">
+                                            <nav class="flex flex-col gap-2">
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Web Development</a>
+                                                <!-- UPDATED: Color & Class -->
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Mobile Apps</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Digital Marketing</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Cloud Solutions</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">AI Integration</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">System Architecture</a>
+                                            </nav>
+                                        </div>
+
+                                        <!-- Part 3: 33% -->
+                                        <div class="w-1/3 flex-shrink-0 pl-8 flex flex-col items-center justify-center">
+                                            <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain mb-6">
+                                            <!-- UPDATED: Color -->
+                                            <a href="Services.html" class="inline-block bg-[#bf5300] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a64900] transition-colors">
+                                                <!-- UPDATED: Color -->
+                                                Show All Services
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- == Shop Dropdown (Full Width) == -->
-                <div class="group"> <!-- UPDATED: Removed 'relative' -->
-                    <button class="flex items-center gap-1 text-sm font-medium hover:text-[#bf5300]"> <!-- UPDATED: Color -->
-                        <a href="Shop.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Shop</a>
-                        <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <!-- UPDATED: Dropdown Panel - Full-width -->
-                    <div class="dropdown-panel absolute top-full left-0 right-0
+                        <!-- == Shop Dropdown (Full Width) == -->
+                        <div class="group">
+                            <!-- UPDATED: Removed 'relative' -->
+                            <button class="flex items-center gap-1 text-sm font-medium hover:text-[#bf5300]">
+                                <!-- UPDATED: Color -->
+                                <a href="Shop.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Shop</a>
+                                <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- UPDATED: Dropdown Panel - Full-width -->
+                            <div class="dropdown-panel absolute top-full left-0 right-0
                                 opacity-0 invisible group-hover:opacity-100 group-hover:visible
                                 transform translate-y-2 group-hover:translate-y-0
-                                "> <!-- UPDATED: Removed 'w-screen', added 'right-0' -->
-                        <div class="bg-white text-gray-800 shadow-2xl surf-shape">
-                            <!-- UPDATED: 3-Column Layout (Centered) -->
-                            <div class="flex p-8 max-w-7xl mx-auto">
-                                <!-- Part 1: 33% -->
-                                <div class="w-1/3 flex-shrink-0 pr-8">
-                                    <h3 class="text-lg font-semibold mb-2 text-[#bf5300]">Our Shop</h3> <!-- UPDATED: Color -->
-                                    <p class="text-sm text-gray-600">Check out our featured products and best-sellers.</p>
-                                </div>
-        
-                                <!-- Part 2: 33% (The List) -->
-                                <div class="w-1/3 px-8 border-l border-r border-gray-200">
-                                    <nav class="flex flex-col gap-2">
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product A</a> <!-- UPDATED: Color & Class -->
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product B</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product C</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product D</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product E</a>
-                                    </nav>
-                                </div>
-        
-                                <!-- Part 3: 33% -->
-                                <div class="w-1/3 flex-shrink-0 pl-8 flex flex-col items-center justify-center">
-                                     <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain mb-6"> <!-- UPDATED: Color -->
-                                     <a href="Shop.html" class="inline-block bg-[#bf5300] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a64900] transition-colors"> <!-- UPDATED: Color -->
-                                         Show All Products
-                                     </a>
+                                ">
+                                <!-- UPDATED: Removed 'w-screen', added 'right-0' -->
+                                <div class="bg-white text-gray-800 shadow-2xl surf-shape">
+                                    <!-- UPDATED: 3-Column Layout (Centered) -->
+                                    <div class="flex p-8 max-w-7xl mx-auto">
+                                        <!-- Part 1: 33% -->
+                                        <div class="w-1/3 flex-shrink-0 pr-8">
+                                            <h3 class="text-lg font-semibold mb-2 text-[#bf5300]">Our Shop</h3>
+                                            <!-- UPDATED: Color -->
+                                            <p class="text-sm text-gray-600">Check out our featured products and best-sellers.</p>
+                                        </div>
+
+                                        <!-- Part 2: 33% (The List) -->
+                                        <div class="w-1/3 px-8 border-l border-r border-gray-200">
+                                            <nav class="flex flex-col gap-2">
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product A</a>
+                                                <!-- UPDATED: Color & Class -->
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product B</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product C</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product D</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product E</a>
+                                            </nav>
+                                        </div>
+
+                                        <!-- Part 3: 33% -->
+                                        <div class="w-1/3 flex-shrink-0 pl-8 flex flex-col items-center justify-center">
+                                            <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain mb-6">
+                                            <!-- UPDATED: Color -->
+                                            <a href="Shop.html" class="inline-block bg-[#bf5300] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a64900] transition-colors">
+                                                <!-- UPDATED: Color -->
+                                                Show All Products
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <a href="gallery.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Gallery</a>
-                <a href="contact.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Contact</a> <!-- UPDATED: Class & Color -->
-            </nav>
+                        <a href="gallery.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Gallery</a>
+                        <a href="contact.html" class="nav-link-animate text-sm font-medium hover:text-[#bf5300]">Contact</a>
+                        <!-- UPDATED: Class & Color -->
+                    </nav>
 
-            <!-- ======== RIGHT: CTA & MOBILE TOGGLE ======== -->
-            <div class="flex items-center gap-4">
-                <!-- CTA Button -->
-                <a href="#quote" class="hidden md:block text-sm font-semibold rounded-full px-5 py-2.5
+                    <!-- ======== RIGHT: CTA & MOBILE TOGGLE ======== -->
+                    <div class="flex items-center gap-4">
+                        <!-- CTA Button -->
+                        <a href="#quote" class="hidden md:block text-sm font-semibold rounded-full px-5 py-2.5
                             bg-white text-[#bf5300]
-                            hover:bg-gray-200 hover:text-[#a64900] transition-colors"> <!-- UPDATED: Color -->
-                    Book now
-                </a>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle lg:hidden p-2 rounded-md z-50 text-white">
-                    <svg class="menu-icon-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    <svg class="menu-icon-close w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-        </div>
-    </header>
+                            hover:bg-gray-200 hover:text-[#a64900] transition-colors">
+                            <!-- UPDATED: Color -->
+                            Book now
+                        </a>
 
-    <!--
+                        <!-- Mobile Menu Toggle -->
+                        <button class="mobile-menu-toggle lg:hidden p-2 rounded-md z-50 text-white">
+                            <svg class="menu-icon-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                            <svg class="menu-icon-close w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!--
       ============================================================
       HEADER - STICKY (GLASSY ORANGE)
       ============================================================
       - Fixed, shorter, slides in from top.
       - Hidden by default with -translate-y-full.
     -->
-    <header id="header-sticky" class="fixed top-0 left-0 right-0 z-50 text-white w-full
+            <header id="header-sticky" class="fixed top-0 left-0 right-0 z-50 text-white w-full
                              bg-[#bf5300]/90 backdrop-blur-md shadow-lg
                              -translate-y-full invisible">
-        <div class="flex justify-between items-center h-[4.5rem] px-6 lg:px-10 max-w-7xl mx-auto">
+                <div class="flex justify-between items-center h-[4.5rem] px-6 lg:px-10 max-w-7xl mx-auto">
 
-            <!-- ======== LEFT: LOGO & PHONE ======== -->
-            <div class="flex items-center gap-6">
-                <!-- Logo -->
-                <a href="index.html" class="text-2xl font-bold tracking-tight">
-                    <img src="images/samba-logo-white.png" alt="MyLogo" class="h-12 w-auto object-contain">
-                </a>
-                
-                <!-- Phone Number (Highlighted) -->
-                <div class="hidden lg:block ml-4 border-l border-white/30 pl-6">
-                    <span class="text-xs opacity-80">Call Us 24/7</span>
-                    <p class="text-l font-semibold text-white">
-                        +212 670 184 552
-                    </p>
-                </div>
-            </div>
+                    <!-- ======== LEFT: LOGO & PHONE ======== -->
+                    <div class="flex items-center gap-6">
+                        <!-- Logo -->
+                        <a href="index.html" class="text-2xl font-bold tracking-tight">
+                            <img src="images/samba-logo-white.png" alt="MyLogo" class="h-12 w-auto object-contain">
+                        </a>
 
-            <!-- ======== CENTER: NAVIGATION ======== -->
-            <nav class="hidden lg:flex items-center gap-8">
-                <!-- UPDATED: Added .nav-link-animate (and adjusted color for dark bg) -->
-                <a href="index.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Home</a>
-                <a href="about.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">About Us</a>
+                        <!-- Phone Number (Highlighted) -->
+                        <div class="hidden lg:block ml-4 border-l border-white/30 pl-6">
+                            <span class="text-xs opacity-80">Call Us 24/7</span>
+                            <p class="text-l font-semibold text-white">
+                                +212 670 184 552
+                            </p>
+                        </div>
+                    </div>
 
-                <!-- == Services Dropdown (Full Width) == -->
-                <div class="group"> <!-- UPDATED: Removed 'relative' -->
-                    <button class="flex items-center gap-1 text-sm font-medium hover:text-gray-200">
-                        <a href="Services.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Serices</a>
-                        <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <!-- UPDATED: Dropdown Panel - Full-width -->
-                    <div class="dropdown-panel absolute top-full left-0 right-0
+                    <!-- ======== CENTER: NAVIGATION ======== -->
+                    <nav class="hidden lg:flex items-center gap-8">
+                        <!-- UPDATED: Added .nav-link-animate (and adjusted color for dark bg) -->
+                        <a href="index.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Home</a>
+                        <a href="about.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">About Us</a>
+
+                        <!-- == Services Dropdown (Full Width) == -->
+                        <div class="group">
+                            <!-- UPDATED: Removed 'relative' -->
+                            <button class="flex items-center gap-1 text-sm font-medium hover:text-gray-200">
+                                <a href="Services.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Serices</a>
+                                <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- UPDATED: Dropdown Panel - Full-width -->
+                            <div class="dropdown-panel absolute top-full left-0 right-0
                                 opacity-0 invisible group-hover:opacity-100 group-hover:visible
                                 transform translate-y-2 group-hover:translate-y-0
-                                "> <!-- UPDATED: Removed 'w-screen', added 'right-0' -->
-                        <div class="bg-white text-gray-800 shadow-2xl surf-shape">
-                             <!-- UPDATED: 3-Column Layout (Centered) -->
-                            <div class="flex p-8 max-w-7xl mx-auto">
-                                <!-- Part 1: 33% -->
-                                <div class="w-1/3 flex-shrink-0 pr-8">
-                                    <h3 class="text-lg font-semibold mb-2 text-[#bf5300]">Our Services</h3> <!-- UPDATED: Color -->
-                                    <p class="text-sm text-gray-600">Explore the solutions we offer to help you grow.</p>
-                                </div>
-        
-                                <!-- Part 2: 33% (The List) -->
-                                <div class="w-1/3 px-8 border-l border-r border-gray-200">
-                                    <nav class="flex flex-col gap-2">
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Web Development</a> <!-- UPDATED: Color & Class -->
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Mobile Apps</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Digital Marketing</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Cloud Solutions</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">AI Integration</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">System Architecture</a>
-                                    </nav>
-                                </div>
-        
-                                <!-- Part 3: 33% -->
-                                <div class="w-1/3 flex-shrink-0 pl-8 flex flex-col items-center justify-center">
-                                     <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain mb-6"> <!-- UPDATED: Color -->
-                                     <a href="#" class="inline-block bg-[#bf5300] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a64900] transition-colors"> <!-- UPDATED: Color -->
-                                         Show All Services
-                                     </a>
+                                ">
+                                <!-- UPDATED: Removed 'w-screen', added 'right-0' -->
+                                <div class="bg-white text-gray-800 shadow-2xl surf-shape">
+                                    <!-- UPDATED: 3-Column Layout (Centered) -->
+                                    <div class="flex p-8 max-w-7xl mx-auto">
+                                        <!-- Part 1: 33% -->
+                                        <div class="w-1/3 flex-shrink-0 pr-8">
+                                            <h3 class="text-lg font-semibold mb-2 text-[#bf5300]">Our Services</h3>
+                                            <!-- UPDATED: Color -->
+                                            <p class="text-sm text-gray-600">Explore the solutions we offer to help you grow.</p>
+                                        </div>
+
+                                        <!-- Part 2: 33% (The List) -->
+                                        <div class="w-1/3 px-8 border-l border-r border-gray-200">
+                                            <nav class="flex flex-col gap-2">
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Web Development</a>
+                                                <!-- UPDATED: Color & Class -->
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Mobile Apps</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Digital Marketing</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Cloud Solutions</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">AI Integration</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">System Architecture</a>
+                                            </nav>
+                                        </div>
+
+                                        <!-- Part 3: 33% -->
+                                        <div class="w-1/3 flex-shrink-0 pl-8 flex flex-col items-center justify-center">
+                                            <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain mb-6">
+                                            <!-- UPDATED: Color -->
+                                            <a href="#" class="inline-block bg-[#bf5300] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a64900] transition-colors">
+                                                <!-- UPDATED: Color -->
+                                                Show All Services
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- == Shop Dropdown (Full Width) == -->
-                <div class="group"> <!-- UPDATED: Removed 'relative' -->
-                    <button class="flex items-center gap-1 text-sm font-medium hover:text-gray-200">
-                        <a href="Shop.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Shop</a>
-                        <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <!-- UPDATED: Dropdown Panel - Full-width -->
-                    <div class="dropdown-panel absolute top-full left-0 right-0
+                        <!-- == Shop Dropdown (Full Width) == -->
+                        <div class="group">
+                            <!-- UPDATED: Removed 'relative' -->
+                            <button class="flex items-center gap-1 text-sm font-medium hover:text-gray-200">
+                                <a href="Shop.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Shop</a>
+                                <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- UPDATED: Dropdown Panel - Full-width -->
+                            <div class="dropdown-panel absolute top-full left-0 right-0
                                 opacity-0 invisible group-hover:opacity-100 group-hover:visible
                                 transform translate-y-2 group-hover:translate-y-0
-                                "> <!-- UPDATED: Removed 'w-screen', added 'right-0' -->
-                        <div class="bg-white text-gray-800 shadow-2xl surf-shape">
-                             <!-- UPDATED: 3-Column Layout (Centered) -->
-                            <div class="flex p-8 max-w-7xl mx-auto">
-                                <!-- Part 1: 33% -->
-                                <div class="w-1/3 flex-shrink-0 pr-8">
-                                    <h3 class="text-lg font-semibold mb-2 text-[#bf5300]">Our Shop</h3> <!-- UPDATED: Color -->
-                                    <p class="text-sm text-gray-600">Check out our featured products and best-sellers.</p>
-                                </div>
-        
-                                <!-- Part 2: 33% (The List) -->
-                                <div class="w-1/3 px-8 border-l border-r border-gray-200">
-                                    <nav class="flex flex-col gap-2">
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product A</a> <!-- UPDATED: Color & Class -->
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product B</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product C</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product D</a>
-                                        <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product E</a>
-                                    </nav>
-                                </div>
-        
-                                <!-- Part 3: 33% -->
-                                <div class="w-1/3 flex-shrink-0 pl-8 flex flex-col items-center justify-center">
-                                     <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain mb-6"> <!-- UPDATED: Color -->
-                                     <a href="Shop.html" class="inline-block bg-[#bf5300] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a64900] transition-colors"> <!-- UPDATED: Color -->
-                                         Show All Products
-                                     </a>
+                                ">
+                                <!-- UPDATED: Removed 'w-screen', added 'right-0' -->
+                                <div class="bg-white text-gray-800 shadow-2xl surf-shape">
+                                    <!-- UPDATED: 3-Column Layout (Centered) -->
+                                    <div class="flex p-8 max-w-7xl mx-auto">
+                                        <!-- Part 1: 33% -->
+                                        <div class="w-1/3 flex-shrink-0 pr-8">
+                                            <h3 class="text-lg font-semibold mb-2 text-[#bf5300]">Our Shop</h3>
+                                            <!-- UPDATED: Color -->
+                                            <p class="text-sm text-gray-600">Check out our featured products and best-sellers.</p>
+                                        </div>
+
+                                        <!-- Part 2: 33% (The List) -->
+                                        <div class="w-1/3 px-8 border-l border-r border-gray-200">
+                                            <nav class="flex flex-col gap-2">
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product A</a>
+                                                <!-- UPDATED: Color & Class -->
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product B</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product C</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product D</a>
+                                                <a href="#" class="nav-link-animate block text-sm font-medium text-gray-700 hover:text-[#bf5300]">Product E</a>
+                                            </nav>
+                                        </div>
+
+                                        <!-- Part 3: 33% -->
+                                        <div class="w-1/3 flex-shrink-0 pl-8 flex flex-col items-center justify-center">
+                                            <img src="images/samba-logo.png" alt="MyLogo" class="h-12 w-auto object-contain mb-6">
+                                            <!-- UPDATED: Color -->
+                                            <a href="Shop.html" class="inline-block bg-[#bf5300] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a64900] transition-colors">
+                                                <!-- UPDATED: Color -->
+                                                Show All Products
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <a href="gallery.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Gallery</a>
-                <a href="contact.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Contact</a> <!-- UPDATED: Class -->
-            </nav>
+                        <a href="gallery.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Gallery</a>
+                        <a href="contact.html" class="nav-link-animate text-sm font-medium hover:text-gray-200">Contact</a>
+                        <!-- UPDATED: Class -->
+                    </nav>
 
-            <!-- ======== RIGHT: CTA & MOBILE TOGGLE ======== -->
-            <div class="flex items-center gap-4">
-                <!-- CTA Button -->
-                <a href="#quote" class="hidden md:block text-sm font-semibold rounded-full px-5 py-2.5
+                    <!-- ======== RIGHT: CTA & MOBILE TOGGLE ======== -->
+                    <div class="flex items-center gap-4">
+                        <!-- CTA Button -->
+                        <a href="#quote" class="hidden md:block text-sm font-semibold rounded-full px-5 py-2.5
                             bg-white text-[#bf5300]
                             hover:bg-gray-200 transition-colors">
                     Book now
                 </a>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle lg:hidden p-2 rounded-md z-50 text-white">
-                    <svg class="menu-icon-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    <svg class="menu-icon-close w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-        </div>
-    </header>
 
-    <!-- MOBILE MENU (FULL SCREEN) -->
-     
-    <div id="mobile-menu"
-         class="fixed top-0 left-0 w-full h-screen bg-gray-900/95 backdrop-blur-lg
+                        <!-- Mobile Menu Toggle -->
+                        <button class="mobile-menu-toggle lg:hidden p-2 rounded-md z-50 text-white">
+                            <svg class="menu-icon-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                            <svg class="menu-icon-close w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MOBILE MENU (FULL SCREEN) -->
+
+            <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-gray-900/95 backdrop-blur-lg
                 flex flex-col items-center justify-start gap-8 pt-24 px-6
                 opacity-0 invisible transition-all duration-300 lg:hidden z-[60]">
-        
-        <!-- Mobile Menu Close Button (Top Right) -->
-        <button class="mobile-menu-toggle absolute top-6 right-6 p-2 rounded-md z-50 text-white">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        
-        <!-- Logo at top-center -->
-        <a href="index.html" class="mobile-menu-link text-2xl font-bold text-white mb-12">MyLogo</a>
-        
-        <a href="index.html" class="mobile-menu-link text-white text-2xl font-semibold">Home</a>
-        <a href="about.html" class="mobile-menu-link text-white text-2xl font-semibold">About Us</a>
-        
-        <!-- Mobile Services Dropdown -->
-        <div class="text-center">
-            <button class="mobile-dropdown-toggle text-white text-2xl font-semibold flex items-center gap-2">
-                <a href="Services.html" class="mobile-menu-link text-white text-2xl font-semibold">Services</a>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-            <div class="mobile-dropdown-content hidden mt-4 space-y-3">
-                <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Service 1</a>
-                <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Service 2</a>
-                <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Service 3</a>
-            </div>
-        </div>
 
-        <!-- Mobile Shop Dropdown -->
-        <div class="text-center">
-            <button class="mobile-dropdown-toggle text-white text-2xl font-semibold flex items-center gap-2">
-                <a href="Shop.html" class="mobile-menu-link text-white text-2xl font-semibold">Shop</a>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-            <div class="mobile-dropdown-content hidden mt-4 space-y-3">
-                <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Product A</a>
-                <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Product B</a>
-                <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Product C</a>
-            </div>
-        </div>
-        <a href="gallery.html" class="mobile-menu-link text-white text-2xl font-semibold">Gallery</a>
-        <a href="contact.html" class="mobile-menu-link text-white text-2xl font-semibold">Contact</a>
-        
-        <a href="#quote" class="mobile-menu-link mt-8 text-lg font-semibold rounded-full px-6 py-3 bg-[#bf5300] text-white hover:bg-[#a64900]"> <!-- UPDATED: Color -->
-            Book now
-        </a>
-    </div>
+                <!-- Mobile Menu Close Button (Top Right) -->
+                <button class="mobile-menu-toggle absolute top-6 right-6 p-2 rounded-md z-50 text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
 
-    <!--
+                <!-- Logo at top-center -->
+                <a href="index.html" class="mobile-menu-link text-2xl font-bold text-white mb-12">MyLogo</a>
+
+                <a href="index.html" class="mobile-menu-link text-white text-2xl font-semibold">Home</a>
+                <a href="about.html" class="mobile-menu-link text-white text-2xl font-semibold">About Us</a>
+
+                <!-- Mobile Services Dropdown -->
+                <div class="text-center">
+                    <button class="mobile-dropdown-toggle text-white text-2xl font-semibold flex items-center gap-2">
+                        <a href="Services.html" class="mobile-menu-link text-white text-2xl font-semibold">Services</a>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden mt-4 space-y-3">
+                        <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Service 1</a>
+                        <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Service 2</a>
+                        <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Service 3</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Shop Dropdown -->
+                <div class="text-center">
+                    <button class="mobile-dropdown-toggle text-white text-2xl font-semibold flex items-center gap-2">
+                        <a href="Shop.html" class="mobile-menu-link text-white text-2xl font-semibold">Shop</a>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden mt-4 space-y-3">
+                        <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Product A</a>
+                        <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Product B</a>
+                        <a href="#" class="mobile-menu-link block text-gray-400 text-lg">Product C</a>
+                    </div>
+                </div>
+                <a href="gallery.html" class="mobile-menu-link text-white text-2xl font-semibold">Gallery</a>
+                <a href="contact.html" class="mobile-menu-link text-white text-2xl font-semibold">Contact</a>
+
+                <a href="#quote" class="mobile-menu-link mt-8 text-lg font-semibold rounded-full px-6 py-3 bg-[#bf5300] text-white hover:bg-[#a64900]">
+                    <!-- UPDATED: Color -->
+                    Book now
+                </a>
+            </div>
+
+            <!--
       ============================================================
       END HEADER MENU
       ============================================================
@@ -421,24 +474,23 @@
                         </div>
                     </div>
                     <div class="absolute bottom-0 left-0 w-full h-24 md:h-32 shape-hero z-10">
-            <svg class="w-full h-full" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="currentColor">
-                <path d="M0,80 C360,130 720,30 1080,80 C1260,105 1350,80 1440,70 L1440,120 L0,120 Z"></path>
-            </svg>
-        </div>
+                        <svg class="w-full h-full" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="currentColor">
+                            <path d="M0,80 C360,130 720,30 1080,80 C1260,105 1350,80 1440,70 L1440,120 L0,120 Z"></path>
+                        </svg>
+                    </div>
                 </section>
 
-<section id="animation-container" class="relative w-full h-[200px] mt-10 max-w-[800px] w-full mx-auto">
-    <!-- Surfer icon -->
-    <div id="surfer" class="surfer absolute w-16 h-16 z-10 mx-auto">
-        <img src="images/surfer.svg" alt="Surfer" class="w-full h-full">
-    </div>
+                <section id="animation-container" class="relative w-full h-[200px] mt-10 max-w-[800px] w-full mx-auto">
+                    <!-- Surfer icon -->
+                    <div id="surfer" class="surfer absolute w-16 h-16 z-10 mx-auto">
+                        <img src="images/surfer.svg" alt="Surfer" class="w-full h-full">
+                    </div>
 
-    <!-- Wave path -->
-    <svg id="wave-svg" class="w-full absolute top-0 left-0" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
-        <path id="wave-path" d="M 50,100 C 150,200 250,0 350,100 C 450,200 550,0 650,100 C 750,200 850,0 950,100"
-              stroke="#c15402" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-</section>
+                    <!-- Wave path -->
+                    <svg id="wave-svg" class="w-full absolute top-0 left-0" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
+                        <path id="wave-path" d="M 50,100 C 150,200 250,0 350,100 C 450,200 550,0 650,100 C 750,200 850,0 950,100" stroke="#c15402" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </section>
 
                 <section class="py-20 bg-secondary">
                     <div class="container mx-auto px-4">
@@ -502,359 +554,338 @@
                         </div>
                         <!-- -->
                         <section class="max-w-6xl mx-auto my-10 p-8 bg-white border-2 border-black rounded-2xl">
-  <!-- Header -->
-  <div class="flex items-center gap-4 mb-8">
-    <div class="w-1 h-10 bg-black rounded"></div>
-    <div>
-      <h2 id="features-heading" class="text-2xl font-bold">Why Choose Us</h2>
-      <p class="text-gray-700 text-sm sm:text-base max-w-xl">Small groups, local guides, sustainable gear — everything you need to learn, progress and enjoy the surf.</p>
-    </div>
-  </div>
+                            <!-- Header -->
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="w-1 h-10 bg-black rounded"></div>
+                                <div>
+                                    <h2 id="features-heading" class="text-2xl font-bold">Why Choose Us</h2>
+                                    <p class="text-gray-700 text-sm sm:text-base max-w-xl">Small groups, local guides, sustainable gear — everything you need to learn, progress and enjoy the surf.</p>
+                                </div>
+                            </div>
 
-  <!-- Features Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <!-- Card 1 -->
-    <div class="bg-white border-2 border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1">
-      <div class="flex items-center gap-3 mb-3">
-        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 border-2 border-gray-300 rounded-md">
-          <i class="fa-solid fa-person-chalkboard text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold">Professional Instructors</h3>
-      </div>
-      <p class="text-gray-600 text-sm">Learn from certified surf instructors with years of experience and a passion for teaching.</p>
-    </div>
+                            <!-- Features Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <!-- Card 1 -->
+                                <div class="bg-white border-2 border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 border-2 border-gray-300 rounded-md">
+                                            <i class="fa-solid fa-person-chalkboard text-xl"></i>
+                                        </div>
+                                        <h3 class="text-lg font-semibold">Professional Instructors</h3>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Learn from certified surf instructors with years of experience and a passion for teaching.</p>
+                                </div>
 
-    <!-- Card 2 -->
-    <div class="bg-white border-2 border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1">
-      <div class="flex items-center gap-3 mb-3">
-        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 border-2 border-gray-300 rounded-md">
-          <i class="fa-solid fa-leaf text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold">Eco-Friendly Boards</h3>
-      </div>
-      <p class="text-gray-600 text-sm">Ride sustainably with our collection of eco-conscious surfboards and equipment.</p>
-    </div>
+                                <!-- Card 2 -->
+                                <div class="bg-white border-2 border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 border-2 border-gray-300 rounded-md">
+                                            <i class="fa-solid fa-leaf text-xl"></i>
+                                        </div>
+                                        <h3 class="text-lg font-semibold">Eco-Friendly Boards</h3>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Ride sustainably with our collection of eco-conscious surfboards and equipment.</p>
+                                </div>
 
-    <!-- Card 3 -->
-    <div class="bg-white border-2 border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1">
-      <div class="flex items-center gap-3 mb-3">
-        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 border-2 border-gray-300 rounded-md">
-          <i class="fa-solid fa-palette text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold">Artistic Surf Culture</h3>
-      </div>
-      <p class="text-gray-600 text-sm">Immerse yourself in a community that celebrates creativity and self-expression.</p>
-    </div>
+                                <!-- Card 3 -->
+                                <div class="bg-white border-2 border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 border-2 border-gray-300 rounded-md">
+                                            <i class="fa-solid fa-palette text-xl"></i>
+                                        </div>
+                                        <h3 class="text-lg font-semibold">Artistic Surf Culture</h3>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Immerse yourself in a community that celebrates creativity and self-expression.</p>
+                                </div>
 
-    <!-- Card 4 -->
-    <div class="bg-white border-2 border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1">
-      <div class="flex items-center gap-3 mb-3">
-        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 border-2 border-gray-300 rounded-md">
-          <i class="fa-solid fa-location-dot text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold">Local Experience</h3>
-      </div>
-      <p class="text-gray-600 text-sm">Discover the best surf spots and hidden gems with our local knowledge.</p>
-    </div>
-  </div>
-</section>
+                                <!-- Card 4 -->
+                                <div class="bg-white border-2 border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 border-2 border-gray-300 rounded-md">
+                                            <i class="fa-solid fa-location-dot text-xl"></i>
+                                        </div>
+                                        <h3 class="text-lg font-semibold">Local Experience</h3>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Discover the best surf spots and hidden gems with our local knowledge.</p>
+                                </div>
+                            </div>
+                        </section>
 
-</div>
-</section>
+                    </div>
+                </section>
 
-<!-- ==================================== -->
-  <!-- NEW Sticky Scroll Container Wrapper -->
-  <!-- ==================================== -->
-  <div class="sticky-scroll-container">
-    <section class="slider-section">
-        <img class="animated-surfer" src="images/surfer2.svg" alt="">
-      <div class="carousel">
-        
-        <!-- ITEM 1 -->
+                <!-- ==================================== -->
+                <!-- NEW Sticky Scroll Container Wrapper -->
+                <!-- ==================================== -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Lessons</h2>
+                    <p class="text-xl text-muted-foreground max-w-2xl mx-auto">Choose the perfect surf lesson for your skill level and goals.</p>
+                </div>
+                <div class="sticky-scroll-container">
 
-        <div class="carousel-item">
-          <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
-              <!-- Image Wrapper -->
-              <div class="course-one__image relative">
-                  <!-- Category Tag -->
-                  <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
-                  
-                  <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
-                      <img src="https://maghrebwaves.com/assets/images/courses/course-1-1.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/courses/course-1-1.jpg'" class="w-full h-auto">
-                      
-                      <!-- Play Button -->
-                      <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0"
-                          style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
-                  </div>
-              </div>
+                    <section class="slider-section">
+                        <img class="animated-surfer" src="images/surfer2.svg" alt="">
 
-              <!-- Content Block -->
-              <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
-                  
-                  <span class="course-number">01</span>
-                  
-                  <!-- Title -->
-                  <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
+                        <div class="carousel">
+
+                            <!-- ITEM 1 -->
+
+                            <div class="carousel-item">
+                                <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
+                                    <!-- Image Wrapper -->
+                                    <div class="course-one__image relative">
+                                        <!-- Category Tag -->
+                                        <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
+
+                                        <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
+                                            <img src="https://maghrebwaves.com/assets/images/courses/course-1-1.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/courses/course-1-1.jpg'" class="w-full h-auto">
+
+                                            <!-- Play Button -->
+                                            <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0" style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content Block -->
+                                    <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
+
+                                        <span class="course-number">01</span>
+
+                                        <!-- Title -->
+                                        <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
                       <a href="#" class="transition-colors duration-500">Advanced Coaching</a>
                   </h3>
-                  
-                  <!-- Description -->
-                  <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
-                  
-                  <!-- Replaced <img> with inline SVG and applied styles via `class` -->
-                  <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
-              </div>
-              
-              <!-- Book Link -->
-              <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
-          </div>
-        </div>
 
-        <!-- ITEM 2 -->
+                                        <!-- Description -->
+                                        <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
 
-        <div class="carousel-item">
-          <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
-              <!-- Image Wrapper -->
-              <div class="course-one__image relative">
-                  <!-- Category Tag -->
-                  <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
-                  
-                  <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
-                      <img src="https://maghrebwaves.com/assets/images/courses/course-1-2.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/courses/course-1-2.jpg'" class="w-full h-auto">
-                      
-                      <!-- Play Button -->
-                      <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0"
-                          style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
-                  </div>
-              </div>
+                                        <!-- Replaced <img> with inline SVG and applied styles via `class` -->
+                                        <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
+                                    </div>
 
-              <!-- Content Block -->
-              <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
-                  
-                  <span class="course-number">02</span>
-                  
-                  <!-- Title -->
-                  <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
+                                    <!-- Book Link -->
+                                    <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
+                                </div>
+                            </div>
+
+                            <!-- ITEM 2 -->
+
+                            <div class="carousel-item">
+                                <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
+                                    <!-- Image Wrapper -->
+                                    <div class="course-one__image relative">
+                                        <!-- Category Tag -->
+                                        <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
+
+                                        <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
+                                            <img src="https://maghrebwaves.com/assets/images/courses/course-1-2.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/courses/course-1-2.jpg'" class="w-full h-auto">
+
+                                            <!-- Play Button -->
+                                            <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0" style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content Block -->
+                                    <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
+
+                                        <span class="course-number">02</span>
+
+                                        <!-- Title -->
+                                        <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
                       <a href="#" class="transition-colors duration-500">Advanced Coaching</a>
                   </h3>
-                  
-                  <!-- Description -->
-                  <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
-                  
-                  <!-- Replaced <img> with inline SVG and applied styles via `class` -->
-                  <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
-              </div>
-              
-              <!-- Book Link -->
-              <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
-          </div>
-        </div>
 
-        <!-- ITEM 3 -->
+                                        <!-- Description -->
+                                        <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
 
-        <div class="carousel-item">
-          <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
-              <!-- Image Wrapper -->
-              <div class="course-one__image relative">
-                  <!-- Category Tag -->
-                  <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
-                  
-                  <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
-                      <img src="https://maghrebwaves.com/assets/images/courses/course-1-3.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/courses/course-1-3.jpg'" class="w-full h-auto">
-                      
-                      <!-- Play Button -->
-                      <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0"
-                          style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
-                  </div>
-              </div>
+                                        <!-- Replaced <img> with inline SVG and applied styles via `class` -->
+                                        <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
+                                    </div>
 
-              <!-- Content Block -->
-              <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
-                  
-                  <span class="course-number">03</span>
-                  
-                  <!-- Title -->
-                  <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
+                                    <!-- Book Link -->
+                                    <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
+                                </div>
+                            </div>
+
+                            <!-- ITEM 3 -->
+
+                            <div class="carousel-item">
+                                <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
+                                    <!-- Image Wrapper -->
+                                    <div class="course-one__image relative">
+                                        <!-- Category Tag -->
+                                        <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
+
+                                        <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
+                                            <img src="https://maghrebwaves.com/assets/images/courses/course-1-3.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/courses/course-1-3.jpg'" class="w-full h-auto">
+
+                                            <!-- Play Button -->
+                                            <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0" style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content Block -->
+                                    <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
+
+                                        <span class="course-number">03</span>
+
+                                        <!-- Title -->
+                                        <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
                       <a href="#" class="transition-colors duration-500">Advanced Coaching</a>
                   </h3>
-                  
-                  <!-- Description -->
-                  <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
-                  
-                  <!-- Replaced <img> with inline SVG and applied styles via `class` -->
-                  <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
-              </div>
-              <!-- Book Link -->
-              <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
-          </div>
-        </div>
 
-        <!-- ITEM 4 -->
+                                        <!-- Description -->
+                                        <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
 
-        <div class="carousel-item">
-          <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
-              <!-- Image Wrapper -->
-              <div class="course-one__image relative">
-                  <!-- Category Tag -->
-                  <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
-                  
-                  <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
-                      <img src="https://maghrebwaves.com/assets/images/activities/activitie-1-4.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/activities/activitie-1-4.jpg'" class="w-full h-auto">
-                      
-                      <!-- Play Button -->
-                      <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0"
-                          style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
-                  </div>
-              </div>
+                                        <!-- Replaced <img> with inline SVG and applied styles via `class` -->
+                                        <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
+                                    </div>
+                                    <!-- Book Link -->
+                                    <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
+                                </div>
+                            </div>
 
-              <!-- Content Block -->
-              <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
-                  
-                  <span class="course-number">04</span>
-                  
-                  <!-- Title -->
-                  <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
+                            <!-- ITEM 4 -->
+
+                            <div class="carousel-item">
+                                <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
+                                    <!-- Image Wrapper -->
+                                    <div class="course-one__image relative">
+                                        <!-- Category Tag -->
+                                        <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
+
+                                        <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
+                                            <img src="https://maghrebwaves.com/assets/images/activities/activitie-1-4.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/activities/activitie-1-4.jpg'" class="w-full h-auto">
+
+                                            <!-- Play Button -->
+                                            <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0" style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content Block -->
+                                    <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
+
+                                        <span class="course-number">04</span>
+
+                                        <!-- Title -->
+                                        <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
                       <a href="#" class="transition-colors duration-500">Advanced Coaching</a>
                   </h3>
-                  
-                  <!-- Description -->
-                  <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
-                  
-                  <!-- Replaced <img> with inline SVG and applied styles via `class` -->
-                  <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
-              </div>
-              
-              <!-- Book Link -->
-              <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
-          </div>
-        </div>
 
-        <!-- ITEM 5 -->
+                                        <!-- Description -->
+                                        <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
 
-        <div class="carousel-item">
-          <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
-              <!-- Image Wrapper -->
-              <div class="course-one__image relative">
-                  <!-- Category Tag -->
-                  <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
-                  
-                  <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
-                      <img src="https://maghrebwaves.com/assets/images/activities/activitie-1-5.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/activities/activitie-1-5.jpg'" class="w-full h-auto">
-                      
-                      <!-- Play Button -->
-                      <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0"
-                          style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
-                  </div>
-              </div>
+                                        <!-- Replaced <img> with inline SVG and applied styles via `class` -->
+                                        <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
+                                    </div>
 
-              <!-- Content Block -->
-              <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
-                  
-                  <span class="course-number">05</span>
-                  
-                  <!-- Title -->
-                  <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
+                                    <!-- Book Link -->
+                                    <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
+                                </div>
+                            </div>
+
+                            <!-- ITEM 5 -->
+
+                            <div class="carousel-item">
+                                <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
+                                    <!-- Image Wrapper -->
+                                    <div class="course-one__image relative">
+                                        <!-- Category Tag -->
+                                        <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
+
+                                        <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
+                                            <img src="https://maghrebwaves.com/assets/images/activities/activitie-1-5.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/activities/activitie-1-5.jpg'" class="w-full h-auto">
+
+                                            <!-- Play Button -->
+                                            <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0" style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content Block -->
+                                    <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
+
+                                        <span class="course-number">05</span>
+
+                                        <!-- Title -->
+                                        <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
                       <a href="#" class="transition-colors duration-500">Advanced Coaching</a>
                   </h3>
-                  
-                  <!-- Description -->
-                  <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
-                  
-                  <!-- Replaced <img> with inline SVG and applied styles via `class` -->
-                  <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
-              </div>
-              
-              <!-- Book Link -->
-              <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
-          </div>
-        </div>
 
-        <!-- ITEM 6 -->
+                                        <!-- Description -->
+                                        <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
 
-        <div class="carousel-item">
-          <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
-              <!-- Image Wrapper -->
-              <div class="course-one__image relative">
-                  <!-- Category Tag -->
-                  <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
-                  
-                  <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
-                      <img src="https://maghrebwaves.com/assets/images/activities/activitie-1-1.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/activities/activitie-1-1.jpg'" class="w-full h-auto">
-                      
-                      <!-- Play Button -->
-                      <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0"
-                          style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
-                  </div>
-              </div>
+                                        <!-- Replaced <img> with inline SVG and applied styles via `class` -->
+                                        <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
+                                    </div>
 
-              <!-- Content Block -->
-              <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
-                  
-                  <span class="course-number">06</span>
-                  
-                  <!-- Title -->
-                  <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
+                                    <!-- Book Link -->
+                                    <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
+                                </div>
+                            </div>
+
+                            <!-- ITEM 6 -->
+
+                            <div class="carousel-item">
+                                <div class="course-one__single max-w-sm mx-auto relative z-10 rounded-[30px] shadow-lg">
+                                    <!-- Image Wrapper -->
+                                    <div class="course-one__image relative">
+                                        <!-- Category Tag -->
+                                        <a href="#" class="course-one__cat text-[var(--thm-black)] bg-[var(--thm-primary)] text-sm font-semibold uppercase flex items-center justify-center h-10 px-6 whitespace-nowrap">Advanced</a>
+
+                                        <div class="course-one__image-inner relative overflow-hidden bg-gray-900 rounded-t-[30px] z-10">
+                                            <img src="https://maghrebwaves.com/assets/images/activities/activitie-1-1.jpg" alt="Advanced Coaching Placeholder Image" onerror="this.src='https://maghrebwaves.com/assets/images/activities/activitie-1-1.jpg'" class="w-full h-auto">
+
+                                            <!-- Play Button -->
+                                            <a href="#" class="w-[65px] h-[65px] flex items-center justify-center text-xl absolute text-[var(--thm-black)] bg-[var(--thm-primary)] opacity-0" style="top: calc(50% - 70.5px); left: calc(50% - 32.5px);">+</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content Block -->
+                                    <div class="course-one__content hvr-sweep-to-bottom bg-[#edf2f5] w-full text-center relative rounded-b-[30px]" style="height: 250px;">
+
+                                        <span class="course-number">06</span>
+
+                                        <!-- Title -->
+                                        <h3 class="mt-0 pt-[53px] mb-6 uppercase text-2xl font-bold text-[var(--thm-base)]">
                       <a href="#" class="transition-colors duration-500">Advanced Coaching</a>
                   </h3>
-                  
-                  <!-- Description -->
-                  <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
-                  
-                  <!-- Replaced <img> with inline SVG and applied styles via `class` -->
-                  <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
-              </div>
-              
-              <!-- Book Link -->
-              <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
-          </div>
-        </div>
-        <!-- ==================================== -->
-        <!-- END OF item 6 -->
-        <!-- ==================================== -->
-    
-      </div> <!-- .carousel -->
-      
-      <!-- Carousel Navigation Buttons -->
-      <div class="carousel-nav">
-        <button id="prev-btn" title="Previous Item">
-          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button id="next-btn" title="Next Item">
-          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
-    
-    
-      <!-- SVG Definitions (unchanged) -->
-      <svg style="display: none">
-        <symbol id="ico-instagram" viewBox="0 0 35 35">
-          <circle opacity=".2" cx="17.5" cy="17.5" r="17" stroke="var(--fill)" fill="none"></circle>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M24.944 20.476c.028-.457.042-1.282.042-2.476s-.014-2.019-.042-2.476c-.056-1.09-.378-1.93-.965-2.517s-1.422-.91-2.503-.965C21.018 12.014 20.194 12 19 12s-2.019.014-2.476.042c-1.081.047-1.92.368-2.517.965s-.918 1.436-.965 2.518C13.014 15.98 13 16.805 13 18c0 1.194.014 2.019.042 2.476.047 1.09.368 1.93.965 2.517s1.436.91 2.518.965c.466.028 1.29.042 2.475.042 1.184 0 2.01-.014 2.476-.042 1.072-.047 1.906-.368 2.503-.965.597-.597.918-1.436.965-2.517ZM19 13.075h-1.427c-.186 0-.438.01-.755.029a11.61 11.61 0 0 0-.797.07c-.215.028-.401.08-.56.154-.26.102-.489.251-.685.447-.196.196-.35.425-.461.685-.056.15-.103.336-.14.56a7.843 7.843 0 0 0-.084.811 7.113 7.113 0 0 0-.014.741c.01.178.01.453 0 .826-.01.373-.01.573 0 .601.01.028.01.228 0 .601s-.01.648 0 .826c.01.177.014.424.014.74 0 .318.028.588.084.812l.14.56c.112.26.265.489.461.685.196.196.425.345.685.447.15.056.336.108.56.154.224.047.49.07.797.07.308 0 .56.01.755.028.196.019.471.019.826 0 .354-.019.554-.019.601 0 .047.019.242.019.587 0s.62-.019.826 0c.205.019.456.01.755-.028.298-.037.569-.06.811-.07.242-.01.424-.06.546-.154.26-.102.494-.251.699-.447a1.vector 1.75 0 0 0 .447-.686c.056-.149.103-.335.14-.559.038-.224.066-.494.084-.811.019-.317.023-.564.014-.741a11.82 11.82 0 0 1 0-.826c.01-.373.01-.573 0-.601-.01-.028-.01-.228 0-.601s.01-.648 0-.826c-.01-.177-.014-.424-.014-.74 0-.318-.028-.588-.084-.812l-.14-.56a1.956 1.956 0 0 0-1.147-1.133 3.979 3.979 0 0 0-.545-.153 3.915 3.915 0 0 0-.811-.07c-.326 0-.578-.01-.755-.028a5.916 5.916 0 0 0-.826 0c-.372.019-.568.019-.587 0Zm3.706 2.225c.14-.14.21-.308.21-.504a.57.57 0 0 0-.21-.503.767.767 0 0 0-.517-.21.718.718 0 0 0-.504.21.622.622 0 0 0-.21.503c.01.196.08.364.21.504s.299.21.504.21c.205 0 .377-.07.517-.21ZM22.063 18c0 .849-.298 1.576-.895 2.182a2.882 2.882 0 0 1-2.168.895 3.075 3.075 0 0 1-2.182-.895c-.606-.588-.904-1.315-.895-2.182.01-.867.308-1.594.895-2.182.588-.587 1.315-.886 2.182-.895.867-.01 1.59.29 2.168.895.578.606.876 1.333.895 2.182Zm-1.077 0a1.95 1.95 0 0 0-.573-1.413A1.897 1.897 0 0 0 19 16c-.56 0-1.03.196-1.413.587A2.001 2.001 0 0 0 17 18c-.01.55.186 1.021.587 1.413.401.391.872.587 1.413.587.54 0 1.012-.196 1.413-.587.4-.392.592-.863.573-1.413Z"
-            transform="translate(-1.5 -0.5)"
-            fill="var(--fill)"
-          ></path>
-        </symbol>
-      
-        <symbol id="ico-linkedin" viewBox="0 0 35 35">
-          <circle opacity=".2" cx="17.5" cy="17.5" r="17" stroke="var(--fill)" fill="none"></circle>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M15.3025 14.0835C15.3025 14.3845 15.1934 14.6403 14.9752 14.851C14.757 15.0617 14.4786 15.167 14.14 15.167C13.8014 15.167 13.5267 15.0617 13.316 14.851C13.1053 14.6403 13 14.3807 13 14.0722C13 13.7637 13.1053 13.5079 13.316 13.3047C13.5267 13.1016 13.8051 13 14.1512 13C14.4974 13 14.772 13.1016 14.9752 13.3047C15.1783 13.5079 15.2874 13.7675 15.3025 14.0835ZM13.0677 23V16.0248H15.2348V23H13.0677ZM16.4763 16.0248C16.5064 16.8676 16.5214 17.6125 16.5214 18.2596V23H18.7111V18.9819C18.7111 18.7111 18.7336 18.5305 18.7788 18.4402C18.9895 17.8984 19.3582 17.625 19.8849 17.625C20.6223 17.625 20.991 18.1317 20.991 19.14V23H23.158V18.8691C23.158 17.8758 22.9285 17.1272 22.4695 16.623C22.0105 16.1189 21.4048 15.8668 20.6524 15.8668C19.6742 15.8668 18.9594 16.243 18.5079 16.9955H18.4628L18.3499 16.0248H16.4763Z"
-            transform="translate(0 -1)"
-            fill="var(--fill)"
-          ></path>
-        </symbol>
-      </svg>
-    
-      <div class="cursor"></div>
-      <div class="cursor cursor2"></div>
-    
-    </section>
-  </div> <!-- .sticky-scroll-container -->
+
+                                        <!-- Description -->
+                                        <p class="mx-auto transition-colors duration-500 text-gray-600 w-2/3">Perfect your technique, learn advanced turns, and get video analysis.</p>
+
+                                        <!-- Replaced <img> with inline SVG and applied styles via `class` -->
+                                        <img class="course-icon" src="images/11923-600x600.svg" alt="Wave Icon Placeholder">
+                                    </div>
+
+                                    <!-- Book Link -->
+                                    <a href="#advanced" class="course-one__book-link w-full flex items-center justify-center bg-[var(--thm-primary)] text-[var(--thm-black)] text-lg font-bold uppercase py-5">Book now</a>
+                                </div>
+                            </div>
+                            <!-- ==================================== -->
+                            <!-- END OF item 6 -->
+                            <!-- ==================================== -->
+
+                        </div>
+                        <!-- .carousel -->
+
+                        <!-- Carousel Navigation Buttons -->
+                        <div class="carousel-nav">
+                            <button id="prev-btn" title="Previous Item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <button id="next-btn" title="Next Item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="cursor"></div>
+                        <div class="cursor cursor2"></div>
+
+                    </section>
+                </div>
+                <!-- .sticky-scroll-container -->
 
                 <div class="relative">
                     <div class="relative w-full overflow-hidden leading-none">
@@ -863,363 +894,59 @@
                         </svg>
                     </div>
                 </div>
-                <section id="services" class="py-20 bg-background">
+
+                <section id="about" class="py-20 bg-background">
                     <div class="container mx-auto px-4">
-                        <div class="text-center mb-16">
-                            <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Lessons</h2>
-                            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">Choose the perfect surf lesson for your skill level and goals.</p>
-                        </div>
-                        <div class="relative w-full max-w-6xl mx-auto" role="region" aria-roledescription="carousel">
-                            <div class="overflow-hidden">
-                                <div class="flex -ml-4" style="transform: translate3d(0px, 0px, 0px);">
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3" style="transform: translate3d(0px, 0px, 0px);">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-48 overflow-hidden rounded-t-lg"><img src="/assets/lesson-beginner-DIeHH1-q.jpg" alt="Beginner's Wave" class="w-full h-full object-cover"></div>
-                                                <div class="p-6">
-                                                    <h3 class="text-2xl font-bold mb-3">Beginner's Wave</h3>
-                                                    <div class="flex gap-4 text-sm text-muted-foreground mb-4">
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4">
-                                                                <circle cx="12" cy="12" r="10"></circle>
-                                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                                            </svg><span>2 hours</span></div>
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-4 h-4">
-                                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                                                <circle cx="9" cy="7" r="4"></circle>
-                                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                            </svg><span>Max 6 people</span></div>
-                                                    </div>
-                                                    <p class="text-muted-foreground mb-4">Perfect for first-timers. Learn the basics of surfing in a safe, fun environment.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-3xl font-bold text-primary">$65</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">Book Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3" style="transform: translate3d(0px, 0px, 0px);">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-48 overflow-hidden rounded-t-lg"><img src="/assets/lesson-intermediate-sujmjgpn.jpg" alt="Intermediate Flow" class="w-full h-full object-cover"></div>
-                                                <div class="p-6">
-                                                    <h3 class="text-2xl font-bold mb-3">Intermediate Flow</h3>
-                                                    <div class="flex gap-4 text-sm text-muted-foreground mb-4">
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4">
-                                                                <circle cx="12" cy="12" r="10"></circle>
-                                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                                            </svg><span>2 hours</span></div>
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-4 h-4">
-                                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                                                <circle cx="9" cy="7" r="4"></circle>
-                                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                            </svg><span>Max 4 people</span></div>
-                                                    </div>
-                                                    <p class="text-muted-foreground mb-4">Take your skills to the next level with advanced techniques and wave reading.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-3xl font-bold text-primary">$85</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">Book Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3" style="transform: translate3d(0px, 0px, 0px);">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-48 overflow-hidden rounded-t-lg"><img src="/assets/lesson-advanced-CKIDOAwF.jpg" alt="Advanced Mastery" class="w-full h-full object-cover"></div>
-                                                <div class="p-6">
-                                                    <h3 class="text-2xl font-bold mb-3">Advanced Mastery</h3>
-                                                    <div class="flex gap-4 text-sm text-muted-foreground mb-4">
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4">
-                                                                <circle cx="12" cy="12" r="10"></circle>
-                                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                                            </svg><span>2 hours</span></div>
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-4 h-4">
-                                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                                                <circle cx="9" cy="7" r="4"></circle>
-                                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                            </svg><span>Max 3 people</span></div>
-                                                    </div>
-                                                    <p class="text-muted-foreground mb-4">Master advanced maneuvers and competitive surf techniques with expert coaching.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-3xl font-bold text-primary">$120</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">Book Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-48 overflow-hidden rounded-t-lg"><img src="/assets/lesson-kids-DYQVJ6RD.jpg" alt="Kids Surf Camp" class="w-full h-full object-cover"></div>
-                                                <div class="p-6">
-                                                    <h3 class="text-2xl font-bold mb-3">Kids Surf Camp</h3>
-                                                    <div class="flex gap-4 text-sm text-muted-foreground mb-4">
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4">
-                                                                <circle cx="12" cy="12" r="10"></circle>
-                                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                                            </svg><span>3 hours</span></div>
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-4 h-4">
-                                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                                                <circle cx="9" cy="7" r="4"></circle>
-                                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                            </svg><span>Max 8 kids</span></div>
-                                                    </div>
-                                                    <p class="text-muted-foreground mb-4">A safe and exciting introduction to surfing for children aged 6-12.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-3xl font-bold text-primary">$55</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">Book Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-48 overflow-hidden rounded-t-lg"><img src="/assets/lesson-group-CHPPCP2Q.jpg" alt="Group Adventure" class="w-full h-full object-cover"></div>
-                                                <div class="p-6">
-                                                    <h3 class="text-2xl font-bold mb-3">Group Adventure</h3>
-                                                    <div class="flex gap-4 text-sm text-muted-foreground mb-4">
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4">
-                                                                <circle cx="12" cy="12" r="10"></circle>
-                                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                                            </svg><span>2.5 hours</span></div>
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-4 h-4">
-                                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                                                <circle cx="9" cy="7" r="4"></circle>
-                                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                            </svg><span>Max 10 people</span></div>
-                                                    </div>
-                                                    <p class="text-muted-foreground mb-4">Perfect for friends and team building. Surf together and create lasting memories.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-3xl font-bold text-primary">$50</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">Book Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-48 overflow-hidden rounded-t-lg"><img src="/assets/lesson-private-BbTWy4OV.jpg" alt="Private Coaching" class="w-full h-full object-cover"></div>
-                                                <div class="p-6">
-                                                    <h3 class="text-2xl font-bold mb-3">Private Coaching</h3>
-                                                    <div class="flex gap-4 text-sm text-muted-foreground mb-4">
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4">
-                                                                <circle cx="12" cy="12" r="10"></circle>
-                                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                                            </svg><span>1.5 hours</span></div>
-                                                        <div class="flex items-center gap-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-4 h-4">
-                                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                                                <circle cx="9" cy="7" r="4"></circle>
-                                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                            </svg><span>1-on-1</span></div>
-                                                    </div>
-                                                    <p class="text-muted-foreground mb-4">Personalized instruction tailored to your specific goals and skill level.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-3xl font-bold text-primary">$150</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">Book Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div class="order-2 lg:order-1">
+                                <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Story</h2>
+                                <p class="text-lg text-muted-foreground mb-6">Surf Art Studio was born from a passion for the ocean and a love for creative expression. We believe that surfing is more than just a sport—it's an art form, a lifestyle, and a connection to nature.</p>
+                                <p class="text-lg text-muted-foreground mb-6">Founded by a group of professional surfers and artists, our mission is to share the joy of surfing while fostering a community that values sustainability, creativity, and authentic connections with the ocean.</p>
+                                <p class="text-lg text-muted-foreground mb-8">Every lesson we teach, every board we craft, and every piece of art we create is infused with our dedication to excellence and respect for the natural world.</p>
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-11 rounded-md px-8 bg-primary hover:bg-accent">Learn More About Us</button>
                             </div>
-                            <button class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground absolute h-8 w-8 rounded-full -left-12 top-1/2 -translate-y-1/2 hidden md:flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-4 w-4">
-                                    <path d="m12 19-7-7 7-7"></path>
-                                    <path d="M19 12H5"></path>
-                                </svg><span class="sr-only">Previous slide</span></button>
-                            <button class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground absolute h-8 w-8 rounded-full -right-12 top-1/2 -translate-y-1/2 hidden md:flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4">
-                                    <path d="M5 12h14"></path>
-                                    <path d="m12 5 7 7-7 7"></path>
-                                </svg><span class="sr-only">Next slide</span></button>
-                        </div>
-                        <div class="text-center mt-12">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8">View All Lessons</button>
+                            <div class="order-1 lg:order-2">
+                                <div class="relative">
+                                    <div class="absolute inset-0 bg-primary/20 rounded-3xl transform rotate-3"></div><img src="/assets/about-surf-dGRnJgNW.jpg" alt="About Surf Art Studio" class="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <div class="relative">
-                    <div class="relative w-full overflow-hidden leading-none">
-                        <svg class="relative block w-full h-24 wave-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-secondary"></path>
-                        </svg>
+
+                <section class="relative py-32 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-600">
+                        <div class="absolute inset-0 opacity-30">
+                            <svg class="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="fill-white animate-wave"
+                                opacity="0.5"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-foreground/40"></div>
                     </div>
-                </div>
-                <section id="shop" class="py-20 bg-secondary">
-                    <div class="container mx-auto px-4">
-                        <div class="text-center mb-16">
-                            <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Shop</h2>
-                            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">Premium surf gear and eco-friendly equipment for every surfer.</p>
-                        </div>
-                        <div class="relative w-full max-w-6xl mx-auto" role="region" aria-roledescription="carousel">
-                            <div class="overflow-hidden">
-                                <div class="flex -ml-4" style="transform: translate3d(0px, 0px, 0px);">
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3" style="transform: translate3d(0px, 0px, 0px);">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-64 overflow-hidden rounded-t-lg"><img src="/assets/product-1-PHa7sGi3.jpg" alt="Classic Longboard" class="w-full h-full object-cover"></div>
-                                                <div class="p-6"><span class="text-sm text-primary font-semibold">Surfboards</span>
-                                                    <h3 class="text-xl font-bold mt-2 mb-3">Classic Longboard</h3>
-                                                    <p class="text-muted-foreground mb-4 text-sm">Perfect for beginners and longboard enthusiasts.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-2xl font-bold text-primary">$799</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-4 h-4 mr-2">
-                                                                <circle cx="8" cy="21" r="1"></circle>
-                                                                <circle cx="19" cy="21" r="1"></circle>
-                                                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                                                            </svg>Add to Cart</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3" style="transform: translate3d(0px, 0px, 0px);">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-64 overflow-hidden rounded-t-lg"><img src="/assets/product-2-CQzINU-E.jpg" alt="Performance Shortboard" class="w-full h-full object-cover"></div>
-                                                <div class="p-6"><span class="text-sm text-primary font-semibold">Surfboards</span>
-                                                    <h3 class="text-xl font-bold mt-2 mb-3">Performance Shortboard</h3>
-                                                    <p class="text-muted-foreground mb-4 text-sm">High-performance board for advanced surfers.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-2xl font-bold text-primary">$699</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-4 h-4 mr-2">
-                                                                <circle cx="8" cy="21" r="1"></circle>
-                                                                <circle cx="19" cy="21" r="1"></circle>
-                                                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                                                            </svg>Add to Cart</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3" style="transform: translate3d(0px, 0px, 0px);">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-64 overflow-hidden rounded-t-lg"><img src="/assets/product-3-DwQ0QTdM.jpg" alt="Premium Wetsuit" class="w-full h-full object-cover"></div>
-                                                <div class="p-6"><span class="text-sm text-primary font-semibold">Wetsuits</span>
-                                                    <h3 class="text-xl font-bold mt-2 mb-3">Premium Wetsuit</h3>
-                                                    <p class="text-muted-foreground mb-4 text-sm">3mm neoprene wetsuit with superior flexibility.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-2xl font-bold text-primary">$249</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-4 h-4 mr-2">
-                                                                <circle cx="8" cy="21" r="1"></circle>
-                                                                <circle cx="19" cy="21" r="1"></circle>
-                                                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                                                            </svg>Add to Cart</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-64 overflow-hidden rounded-t-lg"><img src="/assets/product-1-PHa7sGi3.jpg" alt="Eco Board 7'6&quot;" class="w-full h-full object-cover"></div>
-                                                <div class="p-6"><span class="text-sm text-primary font-semibold">Surfboards</span>
-                                                    <h3 class="text-xl font-bold mt-2 mb-3">Eco Board 7'6"</h3>
-                                                    <p class="text-muted-foreground mb-4 text-sm">Sustainable surfboard made from recycled materials.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-2xl font-bold text-primary">$850</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-4 h-4 mr-2">
-                                                                <circle cx="8" cy="21" r="1"></circle>
-                                                                <circle cx="19" cy="21" r="1"></circle>
-                                                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                                                            </svg>Add to Cart</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-64 overflow-hidden rounded-t-lg"><img src="/assets/product-2-CQzINU-E.jpg" alt="Fish Retro Board" class="w-full h-full object-cover"></div>
-                                                <div class="p-6"><span class="text-sm text-primary font-semibold">Surfboards</span>
-                                                    <h3 class="text-xl font-bold mt-2 mb-3">Fish Retro Board</h3>
-                                                    <p class="text-muted-foreground mb-4 text-sm">Classic fish design for small to medium waves.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-2xl font-bold text-primary">$649</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-4 h-4 mr-2">
-                                                                <circle cx="8" cy="21" r="1"></circle>
-                                                                <circle cx="19" cy="21" r="1"></circle>
-                                                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                                                            </svg>Add to Cart</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="group" aria-roledescription="slide" class="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3">
-                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover-lift h-full">
-                                            <div class="p-0">
-                                                <div class="relative h-64 overflow-hidden rounded-t-lg"><img src="/assets/product-3-DwQ0QTdM.jpg" alt="Winter Wetsuit 5mm" class="w-full h-full object-cover"></div>
-                                                <div class="p-6"><span class="text-sm text-primary font-semibold">Wetsuits</span>
-                                                    <h3 class="text-xl font-bold mt-2 mb-3">Winter Wetsuit 5mm</h3>
-                                                    <p class="text-muted-foreground mb-4 text-sm">Extra thick wetsuit for cold water surfing.</p>
-                                                    <div class="flex items-center justify-between"><span class="text-2xl font-bold text-primary">$349</span>
-                                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 bg-primary hover:bg-accent">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-4 h-4 mr-2">
-                                                                <circle cx="8" cy="21" r="1"></circle>
-                                                                <circle cx="19" cy="21" r="1"></circle>
-                                                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                                                            </svg>Add to Cart</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground absolute h-8 w-8 rounded-full -left-12 top-1/2 -translate-y-1/2 hidden md:flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-4 w-4">
-                                    <path d="m12 19-7-7 7-7"></path>
-                                    <path d="M19 12H5"></path>
-                                </svg><span class="sr-only">Previous slide</span></button>
-                            <button class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground absolute h-8 w-8 rounded-full -right-12 top-1/2 -translate-y-1/2 hidden md:flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4">
-                                    <path d="M5 12h14"></path>
-                                    <path d="m12 5 7 7-7 7"></path>
-                                </svg><span class="sr-only">Next slide</span></button>
-                        </div>
-                        <div class="text-center mt-12">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-11 rounded-md px-8 bg-primary hover:bg-accent">Visit Shop</button>
+                    <div class="relative z-10 container mx-auto px-4 text-center">
+                        <div class="max-w-3xl mx-auto">
+                            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-5 h-5 text-white">
+                                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                </svg><span class="text-sm font-medium text-white">Watch Our Story</span></div>
+                            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Experience the Magic</h2>
+                            <p class="text-xl text-white/90 mb-10">Immerse yourself in the world of surf art. Watch how we blend creativity, passion, and the power of the ocean to create unforgettable experiences.</p>
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md bg-white text-primary hover:bg-white/90 text-lg px-10 py-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-5 h-5 mr-2">
+                                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                </svg>Play Video</button>
                         </div>
                     </div>
                 </section>
-                <div class="relative">
-                    <div class="relative w-full overflow-hidden leading-none">
-                        <svg class="relative block w-full h-24 wave-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-secondary"></path>
-                        </svg>
-                    </div>
-                </div>
+
                 <section class="py-20 bg-background">
                     <div class="container mx-auto px-4">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h2 class="text-4xl md:text-5xl font-bold mb-6">Why Taghazout?</h2>
                                 <p class="text-lg text-muted-foreground mb-8">Nestled along Morocco's stunning Atlantic coast, Taghazout has become one of the world's premier surf destinations. This former fishing village offers the perfect blend of incredible waves, authentic culture, and a laid-back
-                                    lifestyle.</p>
+                                    lifestyle.
+                                </p>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div class="flex gap-4">
                                         <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
@@ -1286,6 +1013,7 @@
                         </div>
                     </div>
                 </section>
+
                 <div class="relative">
                     <div class="relative w-full overflow-hidden leading-none">
                         <svg class="relative block w-full h-24 wave-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -1293,40 +1021,198 @@
                         </svg>
                     </div>
                 </div>
-                <section class="relative py-32 overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-600">
-                        <div class="absolute inset-0 opacity-30">
-                            <svg class="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                                class="fill-white animate-wave" opacity="0.5"></path>
-                            </svg>
+
+                <!-- shop section -->
+
+                <section class="product-grid-section shop">
+                    <div class="shop-container">
+                        <div class="title-section">
+                            <h2 class="section-title">Latest Drop</h2>
                         </div>
-                        <div class="absolute inset-0 bg-foreground/40"></div>
-                    </div>
-                    <div class="relative z-10 container mx-auto px-4 text-center">
-                        <div class="max-w-3xl mx-auto">
-                            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-5 h-5 text-white">
-                                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                                </svg><span class="text-sm font-medium text-white">Watch Our Story</span></div>
-                            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Experience the Magic</h2>
-                            <p class="text-xl text-white/90 mb-10">Immerse yourself in the world of surf art. Watch how we blend creativity, passion, and the power of the ocean to create unforgettable experiences.</p>
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md bg-white text-primary hover:bg-white/90 text-lg px-10 py-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-5 h-5 mr-2">
-                                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                                </svg>Play Video</button>
-                            <div class="mt-12 rounded-2xl overflow-hidden shadow-2xl max-w-4xl mx-auto border-4 border-white/20">
-                                <div class="aspect-video bg-gradient-to-br from-blue-900 to-cyan-700 flex items-center justify-center">
-                                    <div class="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-10 h-10 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                                        </svg>
-                                    </div>
+                        <div class="subtitle-section">
+                            <p class="section-subtitle">Grab our freshest designs before they sell out!</p>
+                        </div>
+                        <div class="product-grid">
+
+                            <!--  Products      -->
+
+                            <div class="product-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line left">
+                                    <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line right">
+                                    <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" class="product-svg top horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+
+                                <div class="product-image-wrapper" style="max-height: 250px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 166 306" preserveAspectRatio="none" class="scribble-svg">
+                                        <path class="scribble-path" filter="url(#scribble)" stroke="#fce04e" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M126 8c-10 10-26 17-41 22-24 9-50 14-74 23a152 152 0 0 0 24 3l50 1c5 0 17 0 20 4 3 3-13 6-15 6a689 689 0 0 0-45 12c1 2 7 2 9 2 11 2 22 1 33 1l48-2 17 1c2 0-2 2-3 2l-8 2-60 11-32 7c-5 1-12 2-16 5-2 1 8 3 9 4 13 2 27 2 39 2 14 0 29-2 43 0 3 1 7 1 3 3-7 3-15 4-23 6l-41 7c-10 2-22 5-31 9-2 2-1 2 1 3l23 2c22 1 43 0 64 3 4 0 4 1 1 2l-20 7c-11 3-22 5-32 9l-14 6c-3 4 32 7 35 7 20 1 43 0 62 6 1 1 5 2 4 3-3 3-9 4-12 5-28 7-57 9-85 15l-30 7-9 3h1l13 1 53-1c15-1 31-1 47 1 10 1-2 4-6 5-14 4-29 5-44 8l-39 7c-2 1-22 5-22 7 0 3 58 4 65 5 6 0 17 0 23 3 1 1-4 3-4 3-16 6-36 7-52 10l-13 3a227 227 0 0 0 49 4c20 0 41 7 62 7"></path>
+                                        <filter id="scribble">
+                                            <feTurbulence baseFrequency="0.05" id="turbulence" numOctaves="2" result="noise" seed="0"></feTurbulence>
+                                            <feDisplacementMap id="displacement" in2="noise" in="SourceGraphic" scale="5"></feDisplacementMap>
+                                        </filter>
+                                    </svg>
+                                    <img src="images/t-shirt-1.png" width="150" alt="Yellow and Black" class="product-image" />
                                 </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+                                <div class="title-wrapper">
+                                    <h3 class="product-title">Bumblebee</h3>
+                                </div>
+
+                                <!-- NEW: Product Description -->
+                                <p class="product-description">
+                                    This board's a real honey. Fresh, fast, and ready to fly. Get yours before it's gone!
+                                </p>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+
+                                <!-- NEW: More Info Button -->
+                                <a href="#" class="more-info-button">More Info</a>
                             </div>
+
+                            <!--  Products      -->
+
+                            <div class="product-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line left">
+                                    <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line right">
+                                    <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" class="product-svg top horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+
+                                <div class="product-image-wrapper" style="max-height: 250px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 166 306" preserveAspectRatio="none" class="scribble-svg">
+                                        <path class="scribble-path" filter="url(#scribble)" stroke="#fce04e" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M126 8c-10 10-26 17-41 22-24 9-50 14-74 23a152 152 0 0 0 24 3l50 1c5 0 17 0 20 4 3 3-13 6-15 6a689 689 0 0 0-45 12c1 2 7 2 9 2 11 2 22 1 33 1l48-2 17 1c2 0-2 2-3 2l-8 2-60 11-32 7c-5 1-12 2-16 5-2 1 8 3 9 4 13 2 27 2 39 2 14 0 29-2 43 0 3 1 7 1 3 3-7 3-15 4-23 6l-41 7c-10 2-22 5-31 9-2 2-1 2 1 3l23 2c22 1 43 0 64 3 4 0 4 1 1 2l-20 7c-11 3-22 5-32 9l-14 6c-3 4 32 7 35 7 20 1 43 0 62 6 1 1 5 2 4 3-3 3-9 4-12 5-28 7-57 9-85 15l-30 7-9 3h1l13 1 53-1c15-1 31-1 47 1 10 1-2 4-6 5-14 4-29 5-44 8l-39 7c-2 1-22 5-22 7 0 3 58 4 65 5 6 0 17 0 23 3 1 1-4 3-4 3-16 6-36 7-52 10l-13 3a227 227 0 0 0 49 4c20 0 41 7 62 7"></path>
+                                        <filter id="scribble">
+                                            <feTurbulence baseFrequency="0.05" id="turbulence" numOctaves="2" result="noise" seed="0"></feTurbulence>
+                                            <feDisplacementMap id="displacement" in2="noise" in="SourceGraphic" scale="5"></feDisplacementMap>
+                                        </filter>
+                                    </svg>
+                                    <img src="images/t-shirt-2.png" width="150" alt="Yellow and Black" class="product-image" />
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+                                <div class="title-wrapper">
+                                    <h3 class="product-title">Bumblebee</h3>
+                                </div>
+
+                                <!-- NEW: Product Description -->
+                                <p class="product-description">
+                                    This board's a real honey. Fresh, fast, and ready to fly. Get yours before it's gone!
+                                </p>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+
+                                <!-- NEW: More Info Button -->
+                                <a href="#" class="more-info-button">More Info</a>
+                            </div>
+
+                            <!--  Products      -->
+
+                            <div class="product-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line left">
+                                    <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line right">
+                                    <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" class="product-svg top horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+
+                                <div class="product-image-wrapper" style="max-height: 250px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 166 306" preserveAspectRatio="none" class="scribble-svg">
+                                        <path class="scribble-path" filter="url(#scribble)" stroke="#fce04e" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M126 8c-10 10-26 17-41 22-24 9-50 14-74 23a152 152 0 0 0 24 3l50 1c5 0 17 0 20 4 3 3-13 6-15 6a689 689 0 0 0-45 12c1 2 7 2 9 2 11 2 22 1 33 1l48-2 17 1c2 0-2 2-3 2l-8 2-60 11-32 7c-5 1-12 2-16 5-2 1 8 3 9 4 13 2 27 2 39 2 14 0 29-2 43 0 3 1 7 1 3 3-7 3-15 4-23 6l-41 7c-10 2-22 5-31 9-2 2-1 2 1 3l23 2c22 1 43 0 64 3 4 0 4 1 1 2l-20 7c-11 3-22 5-32 9l-14 6c-3 4 32 7 35 7 20 1 43 0 62 6 1 1 5 2 4 3-3 3-9 4-12 5-28 7-57 9-85 15l-30 7-9 3h1l13 1 53-1c15-1 31-1 47 1 10 1-2 4-6 5-14 4-29 5-44 8l-39 7c-2 1-22 5-22 7 0 3 58 4 65 5 6 0 17 0 23 3 1 1-4 3-4 3-16 6-36 7-52 10l-13 3a227 227 0 0 0 49 4c20 0 41 7 62 7"></path>
+                                        <filter id="scribble">
+                                            <feTurbulence baseFrequency="0.05" id="turbulence" numOctaves="2" result="noise" seed="0"></feTurbulence>
+                                            <feDisplacementMap id="displacement" in2="noise" in="SourceGraphic" scale="5"></feDisplacementMap>
+                                        </filter>
+                                    </svg>
+                                    <img src="images/t-shirt-3.png" width="150" alt="Yellow and Black" class="product-image" />
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+                                <div class="title-wrapper">
+                                    <h3 class="product-title">Bumblebee</h3>
+                                </div>
+
+                                <!-- NEW: Product Description -->
+                                <p class="product-description">
+                                    This board's a real honey. Fresh, fast, and ready to fly. Get yours before it's gone!
+                                </p>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+
+                                <!-- NEW: More Info Button -->
+                                <a href="#" class="more-info-button">More Info</a>
+                            </div>
+
+                            <!--  Products      -->
+
+                            <div class="product-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line left">
+                                    <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line right">
+                                    <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" class="product-svg top horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+
+                                <div class="product-image-wrapper" style="max-height: 250px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 166 306" preserveAspectRatio="none" class="scribble-svg">
+                                        <path class="scribble-path" filter="url(#scribble)" stroke="#fce04e" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M126 8c-10 10-26 17-41 22-24 9-50 14-74 23a152 152 0 0 0 24 3l50 1c5 0 17 0 20 4 3 3-13 6-15 6a689 689 0 0 0-45 12c1 2 7 2 9 2 11 2 22 1 33 1l48-2 17 1c2 0-2 2-3 2l-8 2-60 11-32 7c-5 1-12 2-16 5-2 1 8 3 9 4 13 2 27 2 39 2 14 0 29-2 43 0 3 1 7 1 3 3-7 3-15 4-23 6l-41 7c-10 2-22 5-31 9-2 2-1 2 1 3l23 2c22 1 43 0 64 3 4 0 4 1 1 2l-20 7c-11 3-22 5-32 9l-14 6c-3 4 32 7 35 7 20 1 43 0 62 6 1 1 5 2 4 3-3 3-9 4-12 5-28 7-57 9-85 15l-30 7-9 3h1l13 1 53-1c15-1 31-1 47 1 10 1-2 4-6 5-14 4-29 5-44 8l-39 7c-2 1-22 5-22 7 0 3 58 4 65 5 6 0 17 0 23 3 1 1-4 3-4 3-16 6-36 7-52 10l-13 3a227 227 0 0 0 49 4c20 0 41 7 62 7"></path>
+                                        <filter id="scribble">
+                                            <feTurbulence baseFrequency="0.05" id="turbulence" numOctaves="2" result="noise" seed="0"></feTurbulence>
+                                            <feDisplacementMap id="displacement" in2="noise" in="SourceGraphic" scale="5"></feDisplacementMap>
+                                        </filter>
+                                    </svg>
+                                    <img src="images/t-shirt-1.png" width="150" alt="Yellow and Black" class="product-image" />
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+                                <div class="title-wrapper">
+                                    <h3 class="product-title">Bumblebee</h3>
+                                </div>
+
+                                <!-- NEW: Product Description -->
+                                <p class="product-description">
+                                    This board's a real honey. Fresh, fast, and ready to fly. Get yours before it's gone!
+                                </p>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+                                    <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+                                </svg>
+
+                                <!-- NEW: More Info Button -->
+                                <a href="#" class="more-info-button">More Info</a>
+                            </div>
+
+
+
+                            <!--  End Products    -->
                         </div>
                     </div>
                 </section>
+
                 <div class="relative">
                     <div class="relative w-full overflow-hidden leading-none">
                         <svg class="relative block w-full h-24 wave-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -1334,30 +1220,9 @@
                         </svg>
                     </div>
                 </div>
-                <section id="about" class="py-20 bg-background">
-                    <div class="container mx-auto px-4">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div class="order-2 lg:order-1">
-                                <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Story</h2>
-                                <p class="text-lg text-muted-foreground mb-6">Surf Art Studio was born from a passion for the ocean and a love for creative expression. We believe that surfing is more than just a sport—it's an art form, a lifestyle, and a connection to nature.</p>
-                                <p class="text-lg text-muted-foreground mb-6">Founded by a group of professional surfers and artists, our mission is to share the joy of surfing while fostering a community that values sustainability, creativity, and authentic connections with the ocean.</p>
-                                <p class="text-lg text-muted-foreground mb-8">Every lesson we teach, every board we craft, and every piece of art we create is infused with our dedication to excellence and respect for the natural world.</p>
-                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-11 rounded-md px-8 bg-primary hover:bg-accent">Learn More About Us</button>
-                            </div>
-                            <div class="order-1 lg:order-2">
-                                <div class="relative">
-                                    <div class="absolute inset-0 bg-primary/20 rounded-3xl transform rotate-3"></div><img src="/assets/about-surf-dGRnJgNW.jpg" alt="About Surf Art Studio" class="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <div class="relative">
-                    <div class="relative w-full overflow-hidden leading-none">
-                        <svg class="relative block w-full h-24 wave-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-secondary"></path>
-                        </svg>
-                    </div>
-                </div>
+
+
+
                 <section id="gallery" class="py-20 bg-secondary">
                     <div class="container mx-auto px-4">
                         <div class="text-center mb-16">
@@ -1396,10 +1261,10 @@
                 <section class="relative py-32 overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary to-accent">
                         <div class="absolute bottom-0 left-0 w-full h-24 md:h-32 text-[#f0f5d6] z-10">
-            <svg class="w-full h-full" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="currentColor">
-                <path d="M0,80 C360,130 720,30 1080,80 C1260,105 1350,80 1440,70 L1440,120 L0,120 Z"></path>
-            </svg>
-        </div>
+                            <svg class="w-full h-full" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="currentColor">
+                                <path d="M0,80 C360,130 720,30 1080,80 C1260,105 1350,80 1440,70 L1440,120 L0,120 Z"></path>
+                            </svg>
+                        </div>
                     </div>
                     <div class="relative z-10 container mx-auto px-4 text-center text-white">
                         <h2 class="text-4xl md:text-6xl font-bold mb-6">Join the Tribe</h2>
@@ -1477,7 +1342,7 @@
                         </div>
                     </div>
                     <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
-                        <p>© 2024 Surf Art Studio. All rights reserved.</p>
+                        <p>© 2025 SAMBA. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
@@ -1486,7 +1351,8 @@
 
 
 
-<script src="js/animation.js"></script>
-<script src="js/header.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/header.js"></script>
 </body>
+
 </html>
