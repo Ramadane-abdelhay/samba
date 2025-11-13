@@ -3560,6 +3560,8 @@ h6 {
     .sticky-scroll-container {
       position: relative;
       height: 400vh; 
+      Background: linear-gradient(180deg, #e0f7ff, #bfe6f2);
+      
     }
 
     .slider-section {
@@ -3567,7 +3569,9 @@ h6 {
       top: 0;
       overflow: hidden;
       font-family: 'Roboto', serif;
-      background-color: #f0f5d5;
+      background-image: url(../images/bg-shape4.svg);
+      background-repeat: repeat;
+      background-size: 400px 400px;
       height: 100vh; /* Ensure section takes full height */
       width: 100%; /* Ensure section takes full width */
     }
@@ -4007,6 +4011,8 @@ h6 {
       max-width: 1200px;
       margin: 0 auto;
       width: 100%;
+      padding-top: 70px;
+      padding-bottom: 70px;
     }
 
     .title-section h2 {

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latest Drop</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=DM+Mono:wght@500&display=swap");
+
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand-blue: #4876ff;
+      --brand-lime: #d9f154;
+      --brand-navy: #2e3192;
+      --brand-orange: #ff7347;
+      --brand-pink: #f7d0e9;
+      --brand-purple: #692e54;
+      --brand-gray: #fffdf9;
+
+      /* Fluid Typography   */
+      --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+      --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+      --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+      --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+      --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+      --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+      --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+      --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+      --step-6: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
+    }
+
+ 
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Bowlby One SC";
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .title-section h2 {
+      opacity: 0;
+      font-size: var(--step-6);
+      text-transform: uppercase;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 16px;
+      animation: slideInFromLeft 600ms linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
+      animation-delay: 200ms;
+    }
+
+    .subtitle-section p {
+      opacity: 0;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: var(--step-0);
+      animation: slideInFromLeft 600ms linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
+      animation-delay: 500ms;
+    }
+
+    .product-grid {
+      --min: 225px;
+      --gap: 1.25rem;
+
+      display: grid;
+      grid-gap: var(--gap);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+    }
+
+    @media (min-width: 768px) {
+      .product-card:nth-child(even) {
+        margin-top: 4rem;
+      }
+    }
+
+    .product-card {
+      /* MODIFIED: Added padding-bottom and increased max-width */
+      padding: 1rem 2rem 1rem 2rem;
+      max-height: 600px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      position: relative;
+      inline-margin: auto;
+      width: 100%;
+      /* MODIFIED: Increased width slightly */
+      max-width: 20rem;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideInFromBottom 0.8s linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
+
+      /* FIXED: Removed broken SCSS @for loop that was here. 
+        Staggered animation delay would require unique nth-child rules 
+        or JavaScript, so it's been removed for browser compatibility.
+      */
+    }
+
+    .horizontal-line,
+    .vertical-line {
+      stroke-width: 2;
+      transition: opacity 0.3s ease;
+      color: #a8a29e;
+      opacity: .5;
+    }
+
+    .horizontal-line {
+      margin-left: -8rem;
+      margin-right: -8rem;
+      height: auto;
+      width: calc(100% + 5rem);
+    }
+
+    .vertical-line {
+      position: absolute;
+      top: 0;
+      height: 100%;
+    }
+
+    .vertical-line.left {
+      left: 1rem;
+    }
+
+    .vertical-line.right {
+      right: 1rem;
+    }
+
+    .product-card:hover :is(.horizontal-line, .vertical-line) {
+      opacity: 1;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 16px;
+      width: 58%;
+      transform-origin: top center;
+      transition: transform 500ms linear(0, -0.008 3.8%, -0.035 7.8%, -0.177 20.3%, -0.215 24.7%, -0.228 29%, -0.207 32.9%, -0.12 37.9%, 0.037 42.5%, 0.261 46.7%, 0.877 55.7%, 1.055 59.9%, 1.17 64.4%, 1.222 69%, 1.228 71.5%, 1.221 74.2%, 1.182 79.2%, 1.033 92.4%, 1.008 96.3%, 1);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.5);
+    }
+
+    .title-wrapper {
+      position: relative;
+      /* MODIFIED: Set height to auto to accommodate description */
+      height: auto;
+      min-height: 50px; /* Kept min-height for hover effect consistency */
+    }
+
+    .product-title {
+      font-size: var(--step-0);
+      font-weight: bold;
+      margin: 8px 0;
+      /* MODIFIED: Changed from absolute to relative to allow content flow */
+      position: relative; 
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* NEW: Style for the product description */
+    .product-description {
+      font-size: var(--step--1);
+      color: #555;
+      margin: 0.5rem 0 1rem;
+      line-height: 1.4;
+    }
+
+    .product-button-wrapper {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 200ms;
+      /* Ensure it doesn't block content below it when invisible */
+      pointer-events: none; 
+    }
+
+    .product-card:hover .product-button-wrapper,
+    .product-card:focus-within .product-button-wrapper {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .product-image-wrapper {
+      overflow: hidden;
+      margin-bottom: -0.25rem;
+      padding-inline: 1rem;
+    }
+
+    .scribble-svg {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      animation: squiggle 0.5s infinite;
+    }
+
+    .scribble-path {
+      transform-origin: center;
+      opacity: 0.6;
+      transition: stroke-dashoffset 500ms ease-in;
+      stroke-dasharray: 1700;
+      stroke-dashoffset: 1700;
+    }
+
+    .product-card:hover .scribble-path {
+      stroke-dashoffset: 0;
+    }
+
+    /* NEW: Styles for the "More Info" button */
+    .more-info-button {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background-color: var(--brand-navy);
+        color: var(--brand-lime);
+        text-decoration: none;
+        text-align: center;
+        font-family: "Bowlby One SC";
+        text-transform: uppercase;
+        font-size: var(--step-0);
+        margin-top: 1rem;
+        border: 2px solid var(--brand-navy);
+        transition: all 0.3s ease;
+        border-radius: 4px; /* Added slight rounding */
+    }
+
+    .more-info-button:hover {
+        background-color: var(--brand-lime);
+        color: var(--brand-navy);
+        transform: scale(1.03);
+    }
+
+
+    @keyframes squiggle {
+      0% {
+        filter: url("#squiggle-0");
+      }
+      25% {
+        filter: url("#squiggle-1");
+      }
+      50% {
+        filter: url("#squiggle-2");
+      }
+      75% {
+        filter: url("#squiggle-3");
+      }
+      100% {
+        filter: url("#squiggle-4");
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInFromBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInFromTop {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Button coded by the brilliant Adam Kuhn
+      FIXED: Converted from SCSS/SASS to standard CSS
+    */
+
+    .button-outer {
+      filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000) drop-shadow(5px 5px 0 #000);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .button-outer:hover {
+      filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000) drop-shadow(0px 0px 0 #000);
+    }
+
+    .button-outer:hover .button-middle {
+      transform: translate(5px, 5px);
+    }
+
+    .button-outer:hover .button-middle .button-inner {
+      color: #000;
+      background-position: 50% 100%;
+    }
+
+    .button-middle {
+      text-decoration: none;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      font-family: monospace;
+      font-size: var(--step-0);
+      font-weight: 600;
+      padding: 0;
+    }
+
+    .button-inner {
+      background: linear-gradient(to bottom, var(--brand-orange) 33%, var(--brand-lime) 66%) 50% 0% / 100% 400% no-repeat;
+      color: #000;
+      padding: 1rem;
+      position: relative;
+      transition: color 0.3s ease-in-out, background-position 0.3s ease-in-out;
+    }
+
+    .button-inner:before,
+    .button-inner:after {
+      content: "";
+      position: absolute;
+      width: 1rem;
+      height: 100%;
+      top: 0;
+      left: calc(100% - 1px);
+      background: inherit;
+      clip-path: polygon(
+        100% 0,
+        74% 28%,
+        100% 29%,
+        100% 70%,
+        84% 78%,
+        100% 100%,
+        0 100%,
+        0 0
+      );
+    }
+
+    .button-inner:after {
+      left: calc(-1rem + 1px);
+      clip-path: polygon(
+        23% 19%,
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        29% 79%,
+        9% 80%,
+        0 33%
+      );
+    }
+    /* End of button fix */
+
+    .promo-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+
+    .promo-link {
+      font-size: var(--step--1);
+      opacity: 0;
+      display: inline-flex;
+      align-items: center;
+      color: white;
+      background-color: #444;
+      border-bottom-left-radius: .5rem;
+      cursor: pointer;
+      gap: .5rem;
+      padding: 26px 12px 6px;
+      text-decoration: none;
+      z-index: 10;
+      animation: slideInFromTop 0.8s linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
+      animation-delay: 4s;
+    }
+
+    .promo-link svg {
+      height: 1.5em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- shop section -->
+
+  <section class="product-grid-section">
+    <div class="container">
+      <div class="title-section">
+        <h2 class="section-title">Latest Drop</h2>
+      </div>
+      <div class="subtitle-section">
+        <p class="section-subtitle">Grab our freshest designs before they sell out!</p>
+      </div>
+      <div class="product-grid">
+        
+        <!--  Products      -->
+        
+        <div class="product-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line left">
+            <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line right">
+            <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" class="product-svg top horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+          
+          <div class="product-image-wrapper" style="max-height: 250px;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 166 306" preserveAspectRatio="none" class="scribble-svg"><path class="scribble-path" filter="url(#scribble)" stroke="#fce04e" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M126 8c-10 10-26 17-41 22-24 9-50 14-74 23a152 152 0 0 0 24 3l50 1c5 0 17 0 20 4 3 3-13 6-15 6a689 689 0 0 0-45 12c1 2 7 2 9 2 11 2 22 1 33 1l48-2 17 1c2 0-2 2-3 2l-8 2-60 11-32 7c-5 1-12 2-16 5-2 1 8 3 9 4 13 2 27 2 39 2 14 0 29-2 43 0 3 1 7 1 3 3-7 3-15 4-23 6l-41 7c-10 2-22 5-31 9-2 2-1 2 1 3l23 2c22 1 43 0 64 3 4 0 4 1 1 2l-20 7c-11 3-22 5-32 9l-14 6c-3 4 32 7 35 7 20 1 43 0 62 6 1 1 5 2 4 3-3 3-9 4-12 5-28 7-57 9-85 15l-30 7-9 3h1l13 1 53-1c15-1 31-1 47 1 10 1-2 4-6 5-14 4-29 5-44 8l-39 7c-2 1-22 5-22 7 0 3 58 4 65 5 6 0 17 0 23 3 1 1-4 3-4 3-16 6-36 7-52 10l-13 3a227 227 0 0 0 49 4c20 0 41 7 62 7"></path><filter id="scribble"><feTurbulence baseFrequency="0.05" id="turbulence" numOctaves="2" result="noise" seed="0"></feTurbulence><feDisplacementMap id="displacement" in2="noise" in="SourceGraphic" scale="5"></feDisplacementMap></filter></svg>
+            <img src="https://images.prismic.io/suburbia/Z1NbmJbqstJ98LhY_yellow-black-complete.png" width="150" alt="Yellow and Black" class="product-image" />
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+          <div class="title-wrapper">
+            <h3 class="product-title">Bumblebee</h3>
+          </div>
+          
+          <!-- NEW: Product Description -->
+          <p class="product-description">
+            This board's a real honey. Fresh, fast, and ready to fly. Get yours before it's gone!
+          </p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+
+          <!-- NEW: More Info Button -->
+          <a href="#" class="more-info-button">More Info</a>
+        </div>
+
+        <!--  Products      -->
+        
+        <div class="product-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line left">
+            <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line right">
+            <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" class="product-svg top horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+          
+          <div class="product-image-wrapper" style="max-height: 250px;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 166 306" preserveAspectRatio="none" class="scribble-svg"><path class="scribble-path" filter="url(#scribble)" stroke="#fce04e" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M126 8c-10 10-26 17-41 22-24 9-50 14-74 23a152 152 0 0 0 24 3l50 1c5 0 17 0 20 4 3 3-13 6-15 6a689 689 0 0 0-45 12c1 2 7 2 9 2 11 2 22 1 33 1l48-2 17 1c2 0-2 2-3 2l-8 2-60 11-32 7c-5 1-12 2-16 5-2 1 8 3 9 4 13 2 27 2 39 2 14 0 29-2 43 0 3 1 7 1 3 3-7 3-15 4-23 6l-41 7c-10 2-22 5-31 9-2 2-1 2 1 3l23 2c22 1 43 0 64 3 4 0 4 1 1 2l-20 7c-11 3-22 5-32 9l-14 6c-3 4 32 7 35 7 20 1 43 0 62 6 1 1 5 2 4 3-3 3-9 4-12 5-28 7-57 9-85 15l-30 7-9 3h1l13 1 53-1c15-1 31-1 47 1 10 1-2 4-6 5-14 4-29 5-44 8l-39 7c-2 1-22 5-22 7 0 3 58 4 65 5 6 0 17 0 23 3 1 1-4 3-4 3-16 6-36 7-52 10l-13 3a227 227 0 0 0 49 4c20 0 41 7 62 7"></path><filter id="scribble"><feTurbulence baseFrequency="0.05" id="turbulence" numOctaves="2" result="noise" seed="0"></feTurbulence><feDisplacementMap id="displacement" in2="noise" in="SourceGraphic" scale="5"></feDisplacementMap></filter></svg>
+            <img src="https://images.prismic.io/suburbia/Z1NbmJbqstJ98LhY_yellow-black-complete.png" width="150" alt="Yellow and Black" class="product-image" />
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+          <div class="title-wrapper">
+            <h3 class="product-title">Bumblebee</h3>
+          </div>
+          
+          <!-- NEW: Product Description -->
+          <p class="product-description">
+            This board's a real honey. Fresh, fast, and ready to fly. Get yours before it's gone!
+          </p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+
+          <!-- NEW: More Info Button -->
+          <a href="#" class="more-info-button">More Info</a>
+        </div>
+
+        <!--  Products      -->
+        
+        <div class="product-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line left">
+            <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line right">
+            <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" class="product-svg top horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+          
+          <div class="product-image-wrapper" style="max-height: 250px;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 166 306" preserveAspectRatio="none" class="scribble-svg"><path class="scribble-path" filter="url(#scribble)" stroke="#fce04e" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M126 8c-10 10-26 17-41 22-24 9-50 14-74 23a152 152 0 0 0 24 3l50 1c5 0 17 0 20 4 3 3-13 6-15 6a689 689 0 0 0-45 12c1 2 7 2 9 2 11 2 22 1 33 1l48-2 17 1c2 0-2 2-3 2l-8 2-60 11-32 7c-5 1-12 2-16 5-2 1 8 3 9 4 13 2 27 2 39 2 14 0 29-2 43 0 3 1 7 1 3 3-7 3-15 4-23 6l-41 7c-10 2-22 5-31 9-2 2-1 2 1 3l23 2c22 1 43 0 64 3 4 0 4 1 1 2l-20 7c-11 3-22 5-32 9l-14 6c-3 4 32 7 35 7 20 1 43 0 62 6 1 1 5 2 4 3-3 3-9 4-12 5-28 7-57 9-85 15l-30 7-9 3h1l13 1 53-1c15-1 31-1 47 1 10 1-2 4-6 5-14 4-29 5-44 8l-39 7c-2 1-22 5-22 7 0 3 58 4 65 5 6 0 17 0 23 3 1 1-4 3-4 3-16 6-36 7-52 10l-13 3a227 227 0 0 0 49 4c20 0 41 7 62 7"></path><filter id="scribble"><feTurbulence baseFrequency="0.05" id="turbulence" numOctaves="2" result="noise" seed="0"></feTurbulence><feDisplacementMap id="displacement" in2="noise" in="SourceGraphic" scale="5"></feDisplacementMap></filter></svg>
+            <img src="https://images.prismic.io/suburbia/Z1NbmJbqstJ98LhY_yellow-black-complete.png" width="150" alt="Yellow and Black" class="product-image" />
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+          <div class="title-wrapper">
+            <h3 class="product-title">Bumblebee</h3>
+          </div>
+          
+          <!-- NEW: Product Description -->
+          <p class="product-description">
+            This board's a real honey. Fresh, fast, and ready to fly. Get yours before it's gone!
+          </p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+
+          <!-- NEW: More Info Button -->
+          <a href="#" class="more-info-button">More Info</a>
+        </div>
+
+        <!--  Products      -->
+        
+        <div class="product-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line left">
+            <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 555" preserveAspectRatio="none" class="product-svg vertical-line right">
+            <path fill="none" stroke="currentColor" d="M4.42.73c-2.26 26.23.02-6.6 1.2 43.35.23 9.32-2.18 7.94-4.04 16.35a14.65 14.65 0 0 0 0 4.97c.97 7.34 3.34 14.33 3.57 21.8.25 8.41-2.29 16.65-2.16 25.08.34 22.7 4.9 14.96 2.83 34.25-.46 4.36-2.72 8.16-2.83 12.58-.25 10.5 1.83 20.9 1.79 31.4-.03 6.97-2.06 19.04-1.99 20.68.91 19.67 3.03 4.4 2.43 33.04-.84 39.25-3.08 33.75-2.85 51.02.13 9.92 2.04 19.65 2.3 29.56.18 7.18-1.19 14.32-.97 21.5.14 4.5 2.23 8.7 2.04 13.2-1.4 33.36-4.96 13.26-3.6 36.05 2.3 38.96 3.25 77.61.48 116.44-.24 3.35.3 7.14 1.08 11.1 2.16 10.89 2.16 23.87.92 31.24"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" class="product-svg top horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+          
+          <div class="product-image-wrapper" style="max-height: 250px;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 166 306" preserveAspectRatio="none" class="scribble-svg"><path class="scribble-path" filter="url(#scribble)" stroke="#fce04e" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M126 8c-10 10-26 17-41 22-24 9-50 14-74 23a152 152 0 0 0 24 3l50 1c5 0 17 0 20 4 3 3-13 6-15 6a689 689 0 0 0-45 12c1 2 7 2 9 2 11 2 22 1 33 1l48-2 17 1c2 0-2 2-3 2l-8 2-60 11-32 7c-5 1-12 2-16 5-2 1 8 3 9 4 13 2 27 2 39 2 14 0 29-2 43 0 3 1 7 1 3 3-7 3-15 4-23 6l-41 7c-10 2-22 5-31 9-2 2-1 2 1 3l23 2c22 1 43 0 64 3 4 0 4 1 1 2l-20 7c-11 3-22 5-32 9l-14 6c-3 4 32 7 35 7 20 1 43 0 62 6 1 1 5 2 4 3-3 3-9 4-12 5-28 7-57 9-85 15l-30 7-9 3h1l13 1 53-1c15-1 31-1 47 1 10 1-2 4-6 5-14 4-29 5-44 8l-39 7c-2 1-22 5-22 7 0 3 58 4 65 5 6 0 17 0 23 3 1 1-4 3-4 3-16 6-36 7-52 10l-13 3a227 227 0 0 0 49 4c20 0 41 7 62 7"></path><filter id="scribble"><feTurbulence baseFrequency="0.05" id="turbulence" numOctaves="2" result="noise" seed="0"></feTurbulence><feDisplacementMap id="displacement" in2="noise" in="SourceGraphic" scale="5"></feDisplacementMap></filter></svg>
+            <img src="https://images.prismic.io/suburbia/Z1NbmJbqstJ98LhY_yellow-black-complete.png" width="150" alt="Yellow and Black" class="product-image" />
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+          <div class="title-wrapper">
+            <h3 class="product-title">Bumblebee</h3>
+          </div>
+          
+          <!-- NEW: Product Description -->
+          <p class="product-description">
+            This board's a real honey. Fresh, fast, and ready to fly. Get yours before it's gone!
+          </p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 8" width="266" height="8" preserveAspectRatio="none" shape-rendering="crispEdges" class="product-svg bottom horizontal-line">
+            <path fill="none" stroke="currentColor" d="M.74 5.43c16.62-3.7 7.17-2.5 43.93-.8 17.36.79 15.14-2.9 24.1-2.63 1.21.04 5.55 1.98 7.47 2.14 5.24.42 8.17-.7 13.42-.44 3 .14 5.77 2.11 8.77 2.1 8.33-.04 16.56-2.19 24.89-2.25 10.32-.07 23.74 1.66 34.49 1.07 8.49-.46 17.47-1.77 25.92-2.65 11.98-1.24 18.38 2.3 30.24 3.88 12.82 1.7 5.26-2.3 21.35-2.14 10.15.1 19.92 1.14 29.88 1.7"></path>
+          </svg>
+
+          <!-- NEW: More Info Button -->
+          <a href="#" class="more-info-button">More Info</a>
+        </div>
+
+        
+        
+        <!--  End Products    -->
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
