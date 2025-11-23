@@ -263,3 +263,163 @@ document.addEventListener("DOMContentLoaded", () => {
   handleTransparentHeader();
   handleScroll();
 });
+
+
+/* ACTIVITIES CAROUSEL */
+
+const track = document.getElementById('track');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        // Configuration
+        const CLONE_COUNT = 3; // How many items to clone at each end (max visible items)
+        const AUTO_PLAY_DELAY = 2000;
+        
+        // State
+        let currentIndex = CLONE_COUNT; // Start at the first real item (after start clones)
+        let autoPlayInterval;
+        let isTransitioning = false;
+
+        // 1. Initial Setup: Clone Items
+        // We clone the first few to the end, and last few to the start.
+        const originalItems = Array.from(track.children);
+        
+        // Create clones
+        const startClones = originalItems.slice(-CLONE_COUNT).map(item => item.cloneNode(true));
+        const endClones = originalItems.slice(0, CLONE_COUNT).map(item => item.cloneNode(true));
+
+        // Inject clones into DOM
+        startClones.forEach(clone => track.insertBefore(clone, track.firstChild));
+        endClones.forEach(clone => track.appendChild(clone));
+
+        // Get updated list of all items (clones + real)
+        const allItems = Array.from(track.children);
+        const totalSlides = allItems.length;
+
+        // 2. Logic to calculate width and position
+        function getSlidesToShow() {
+            if (window.innerWidth >= 1024) return 3; // lg
+            if (window.innerWidth >= 768) return 2;  // md
+            return 1;                                // mobile
+        }
+
+        function updateCarousel(enableTransition = true) {
+            const slidesToShow = getSlidesToShow();
+            const itemWidth = 100 / slidesToShow;
+            
+            // Toggle transition
+            if (enableTransition) {
+                track.style.transition = 'transform 0.5s ease-out';
+            } else {
+                track.style.transition = 'none';
+            }
+
+            const translateX = -(currentIndex * itemWidth);
+            track.style.transform = `translateX(${translateX}%)`;
+        }
+
+        // 3. Movement Logic
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex++;
+            updateCarousel(true);
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex--;
+            updateCarousel(true);
+        }
+
+        // 4. Infinite Loop "Jump" Logic (The Magic Part)
+        track.addEventListener('transitionend', () => {
+            isTransitioning = false;
+            
+            const realItemCount = originalItems.length; // 6
+            
+            // Case A: We scrolled past the last real item into the "End Clones"
+            // The first end clone is at index: CLONE_COUNT + realItemCount
+            if (currentIndex >= CLONE_COUNT + realItemCount) {
+                // Snap back to the first real item (index 3)
+                // Calculate the offset into the clones to maintain smooth scrolling if user clicked fast
+                const offset = currentIndex - (CLONE_COUNT + realItemCount);
+                currentIndex = CLONE_COUNT + offset; 
+                updateCarousel(false); // Disable animation for the snap
+            }
+
+            // Case B: We scrolled backwards past the first real item into "Start Clones"
+            // The last start clone is at index: CLONE_COUNT - 1
+            if (currentIndex < CLONE_COUNT) {
+                // Snap to the last real item
+                const offset = CLONE_COUNT - currentIndex;
+                currentIndex = (CLONE_COUNT + realItemCount) - offset;
+                updateCarousel(false);
+            }
+        });
+
+        // 5. Auto Play
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayInterval = setInterval(() => {
+                nextSlide();
+            }, AUTO_PLAY_DELAY);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // 6. Event Listeners
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoPlay(); // Reset timer
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoPlay(); // Reset timer
+        });
+
+        track.addEventListener('mouseenter', stopAutoPlay);
+        track.addEventListener('mouseleave', startAutoPlay);
+        
+        window.addEventListener('resize', () => {
+            // Recalculate layout without animating
+            updateCarousel(false);
+        });
+
+        // Initialize
+        updateCarousel(false); // Initial positioning without animation
+        startAutoPlay();
+
+
+/* WHATSSAP BUTTON */
+
+document.querySelector('.wa__btn_popup').addEventListener('click', function() {
+            const chatBox = document.querySelector('.wa__popup_chat_box');
+            const btn = this;
+            
+            if (chatBox.classList.contains('wa__active')) {
+                // Close Animation
+                chatBox.classList.remove('wa__active');
+                btn.classList.remove('wa__active');
+                
+                // Reset pending states after animation
+                setTimeout(() => {
+                    chatBox.classList.remove('wa__pending');
+                    chatBox.classList.remove('wa__lauch');
+                }, 400);
+            } else {
+                // Open Animation
+                chatBox.classList.add('wa__pending');
+                chatBox.classList.add('wa__active');
+                btn.classList.add('wa__active');
+                
+                // Launch inner items slightly after box opens
+                setTimeout(() => {
+                    chatBox.classList.add('wa__lauch');
+                }, 100);
+            }
+        });
